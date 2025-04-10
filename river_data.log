@@ -1,0 +1,8 @@
+2025-04-10 15:05:06,460 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T15%3A05%3A05.700-04%3A00&endDT=2025-04-10T15%3A05%3A05.700-04%3A00&format=rdb
+2025-04-10 15:05:06,738 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-04-10 15:05:06,775 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-04-10 15:05:06,899 - __main__ - INFO - Data processed successfully
+2025-04-10 15:05:32,626 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119000&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T15%3A05%3A32.168-04%3A00&endDT=2025-04-10T15%3A05%3A32.168-04%3A00&format=rdb
+2025-04-10 15:05:32,689 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-04-10 15:05:32,715 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-04-10 15:05:32,829 - __main__ - INFO - Data processed successfully

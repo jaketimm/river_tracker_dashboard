@@ -1,6 +1,12 @@
 import csv
 import os
 
+
+# This scipt is used to update the station_list_mi.csv file with the latest station data from 
+# the real_mi.txt file. The real_mi.txt file is a list of stations that are currently in the 
+# USGS database, and can be downloaed here: https://waterwatch.usgs.gov/index.php?id=wwds_map. 
+# Select Michigan, currrent streamflow, site, Water-Resources Regions, and CSV.
+
 try:
     # Check if input file exists
     if not os.path.exists('real_mi.txt'):
