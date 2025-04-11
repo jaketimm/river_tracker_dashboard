@@ -52,6 +52,9 @@ def display_river_data(station_id, sample_interval):
         # Convert level values from string to numeric
         df_sampled = df_sampled.astype({'level': float}, errors='ignore')
         df_sampled.iloc[0, 4] = df_sampled.iloc[1, 4]  # overwrite '14n' string
+        
+        # Convert datetime column to proper datetime objects to avoid matplotlib warning
+        df_sampled['datetime'] = pd.to_datetime(df_sampled['datetime'])
 
         fig, ax1 = plt.subplots(figsize=(12, 8))
         ax1.plot(df_sampled['datetime'], df_sampled['level'])
@@ -66,7 +69,9 @@ def display_river_data(station_id, sample_interval):
         ax1.tick_params(rotation=45)
         # Adjust x-tick frequency based on sampling interval
         tick_step = max(24 // sample_interval, 1)  # Show at least one label per day
-        ax1.set_xticks(ax1.get_xticks()[::tick_step])
+        # Set x-ticks directly from the sampled data
+        ax1.set_xticks(df_sampled['datetime'][::tick_step])
+        ax1.set_xticklabels([dt.strftime('%Y-%m-%d %H:%M') for dt in df_sampled['datetime'][::tick_step]], rotation=45)
         plt.tight_layout()
         plt.show()
 
