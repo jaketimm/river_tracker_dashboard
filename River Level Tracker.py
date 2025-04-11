@@ -25,7 +25,7 @@ class MyApp(QWidget):
         self.initUI()
         self.time_period = 21  # default value of 21 days
         self.site_id = '04119070'  # default station choice
-        self.sample_interval = 6  # default sampling interval
+        self.sample_interval = 3  # default sampling interval
 
     def initUI(self):
         self.setGeometry(300, 300, 360, 250)

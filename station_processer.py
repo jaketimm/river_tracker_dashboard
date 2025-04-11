@@ -45,6 +45,11 @@ try:
                     print(f"Error at row {row_num}: Station ID '{station_id}' is not numeric")
                     continue
                 
+                # Check if station name contains 'MI'
+                if 'MI' not in name:
+                    print(f"Warning at row {row_num}: Station name '{name}' does not contain 'MI' and will be excluded")
+                    continue
+                
                 # Write to CSV
                 writer.writerow([name, station_id])
                 row_count += 1
