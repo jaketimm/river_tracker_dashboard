@@ -30,6 +30,7 @@ class MyApp(QWidget):
         self.initUI()
         self.time_period = 21  # default value of 21 days
         self.site_id = ''  # will be set when user selects a station
+        self.site_name = ''
         self.sample_interval = 3  # default sampling interval
 
     def initUI(self):
@@ -117,6 +118,8 @@ class MyApp(QWidget):
         selected_text = item.text()
         # Extract the ID from the text (assumes ID is in parentheses at the end)
         station_id = selected_text.split('(')[-1].strip(')')
+        # set name and ID
+        self.site_name = selected_text
         self.site_id = station_id
         logger.info(f"Selected station ID: {self.site_id}")
 
@@ -132,11 +135,10 @@ class MyApp(QWidget):
         if not self.site_id:
             # Show dialog box if no station is selected
             QMessageBox.warning(self, "No Station Selected", "Please select a station before downloading data.")
-            logger.error("No station selected")
             return
         try:
             download_river_data(self.site_id, self.time_period)
-            display_river_data(self.site_id, self.sample_interval)
+            display_river_data(self.sample_interval, self.site_name)
             logger.info("Data processed successfully")
         except Exception as e:
             error_msg = f"Error occurred while processing data: {str(e)}"

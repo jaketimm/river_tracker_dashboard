@@ -84,3 +84,32 @@
 2025-04-14 11:34:03,803 - __main__ - INFO - Selected station ID: 04121500
 2025-04-14 11:34:08,727 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04121500&agencyCd=USGS&parameterCd=00065&startDT=2025-03-24T11%3A34%3A08.555-04%3A00&endDT=2025-04-14T11%3A34%3A08.555-04%3A00&format=rdb
 2025-04-14 11:34:08,845 - __main__ - INFO - Data processed successfully
+2025-04-14 14:18:45,786 - __main__ - INFO - Selected station ID: 442805084411001
+2025-04-14 14:18:51,862 - __main__ - INFO - Selected station ID: 445512084415301
+2025-04-14 14:18:52,538 - __main__ - INFO - Selected station ID: 442400084472801
+2025-04-14 14:19:09,192 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-24T14%3A19%3A08.934-04%3A00&endDT=2025-04-14T14%3A19%3A08.934-04%3A00&format=rdb
+2025-04-14 14:19:09,205 - data_visualization - ERROR - Required columns missing from data file
+2025-04-14 14:19:09,205 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-14 14:19:09,205 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-14 14:19:32,759 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-04-09T14%3A19%3A32.623-04%3A00&endDT=2025-04-14T14%3A19%3A32.623-04%3A00&format=rdb
+2025-04-14 14:19:32,762 - data_visualization - ERROR - Required columns missing from data file
+2025-04-14 14:19:32,762 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-14 14:19:32,762 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-14 14:19:37,186 - __main__ - INFO - Selected station ID: 445512084415301
+2025-04-14 14:19:38,713 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=445512084415301&agencyCd=USGS&parameterCd=00065&startDT=2025-04-09T14%3A19%3A38.559-04%3A00&endDT=2025-04-14T14%3A19%3A38.559-04%3A00&format=rdb
+2025-04-14 14:19:38,846 - __main__ - INFO - Data processed successfully
+2025-04-14 14:19:50,526 - __main__ - INFO - Selected station ID: 442805084411001
+2025-04-14 14:19:51,376 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442805084411001&agencyCd=USGS&parameterCd=00065&startDT=2025-04-09T14%3A19%3A51.224-04%3A00&endDT=2025-04-14T14%3A19%3A51.224-04%3A00&format=rdb
+2025-04-14 14:19:51,460 - __main__ - INFO - Data processed successfully
+2025-04-14 14:35:34,812 - __main__ - INFO - Selected station ID: 04114000
+2025-04-14 14:35:40,366 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04114000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-02T14%3A35%3A39.920-04%3A00&endDT=2025-04-14T14%3A35%3A39.920-04%3A00&format=rdb
+2025-04-14 14:35:40,526 - __main__ - INFO - Data processed successfully
+2025-04-14 14:36:03,612 - __main__ - INFO - Selected station ID: 04119055
+2025-04-14 14:36:06,455 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119055&agencyCd=USGS&parameterCd=00065&startDT=2025-04-02T14%3A36%3A06.129-04%3A00&endDT=2025-04-14T14%3A36%3A06.129-04%3A00&format=rdb
+2025-04-14 14:36:06,567 - __main__ - INFO - Data processed successfully
+2025-04-14 14:36:36,886 - __main__ - INFO - Selected station ID: 04119160
+2025-04-14 14:36:38,549 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119160&agencyCd=USGS&parameterCd=00065&startDT=2025-04-02T14%3A36%3A38.196-04%3A00&endDT=2025-04-14T14%3A36%3A38.196-04%3A00&format=rdb
+2025-04-14 14:36:38,657 - __main__ - INFO - Data processed successfully
+2025-04-14 14:37:07,122 - __main__ - INFO - Selected station ID: 04121944
+2025-04-14 14:37:15,582 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04121944&agencyCd=USGS&parameterCd=00065&startDT=2025-04-02T14%3A37%3A15.238-04%3A00&endDT=2025-04-14T14%3A37%3A15.238-04%3A00&format=rdb
+2025-04-14 14:37:15,722 - __main__ - INFO - Data processed successfully

@@ -15,7 +15,7 @@ and displays the river data for a selected river station.
 '''
 
 
-def display_river_data(station_id, sample_interval):
+def display_river_data(sample_interval, site_name):
     # Check if data file exists
     if not os.path.exists('river_level_data.rdb'):
         logger.error("Data file 'river_level_data.rdb' not found")
@@ -59,12 +59,8 @@ def display_river_data(station_id, sample_interval):
         fig, ax1 = plt.subplots(figsize=(12, 8))
         ax1.plot(df_sampled['datetime'], df_sampled['level'])
         ax1.set_xlabel(f'Date ({sample_interval} hr Increments)')
-        ax1.set_ylabel('River Level (feet)')
-
-        if station_id == '04119000':
-            plt.title('Grand River at Grand Rapids, MI - 04119000')
-        elif station_id == '04119070':
-            plt.title('Grand River at State Hwy M-11 at Grandville, MI - 04119070')
+        ax1.set_ylabel('Water Level (feet)')
+        plt.title(site_name)
 
         ax1.tick_params(rotation=45)
         # Adjust x-tick frequency based on sampling interval
