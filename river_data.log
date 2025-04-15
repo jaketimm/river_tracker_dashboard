@@ -113,3 +113,65 @@
 2025-04-14 14:37:07,122 - __main__ - INFO - Selected station ID: 04121944
 2025-04-14 14:37:15,582 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04121944&agencyCd=USGS&parameterCd=00065&startDT=2025-04-02T14%3A37%3A15.238-04%3A00&endDT=2025-04-14T14%3A37%3A15.238-04%3A00&format=rdb
 2025-04-14 14:37:15,722 - __main__ - INFO - Data processed successfully
+2025-04-15 10:08:24,618 - __main__ - INFO - Selected station ID: 04046000
+2025-04-15 10:08:36,148 - __main__ - INFO - Selected station ID: 04122500
+2025-04-15 10:08:39,781 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04122500&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T10%3A08%3A39.390-04%3A00&endDT=2025-04-15T10%3A08%3A39.390-04%3A00&format=rdb
+2025-04-15 10:08:40,063 - __main__ - INFO - Data processed successfully
+2025-04-15 11:22:38,481 - __main__ - INFO - Selected station ID: 04119000
+2025-04-15 11:22:39,247 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 11:22:41,952 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T11%3A22%3A41.323-04%3A00&endDT=2025-04-15T11%3A22%3A41.323-04%3A00&format=rdb
+2025-04-15 11:22:42,121 - __main__ - INFO - Data processed successfully
+2025-04-15 11:27:02,577 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 11:27:08,086 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 11:27:09,589 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T11%3A27%3A09.048-04%3A00&endDT=2025-04-15T11%3A27%3A09.048-04%3A00&format=rdb
+2025-04-15 11:27:09,763 - __main__ - INFO - Data processed successfully
+2025-04-15 11:48:21,811 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 11:48:24,326 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T11%3A48%3A24.074-04%3A00&endDT=2025-04-15T11%3A48%3A24.074-04%3A00&format=rdb
+2025-04-15 11:48:24,495 - __main__ - INFO - Data processed successfully
+2025-04-15 12:27:20,786 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 12:27:28,477 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T12%3A27%3A27.570-04%3A00&endDT=2025-04-15T12%3A27%3A27.570-04%3A00&format=rdb
+2025-04-15 12:27:28,645 - __main__ - INFO - Data processed successfully
+2025-04-15 12:36:30,713 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 12:36:33,272 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T12%3A36%3A32.724-04%3A00&endDT=2025-04-15T12%3A36%3A32.724-04%3A00&format=rdb
+2025-04-15 12:36:33,455 - __main__ - INFO - Data processed successfully
+2025-04-15 12:37:23,116 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 12:37:24,613 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T12%3A37%3A24.241-04%3A00&endDT=2025-04-15T12%3A37%3A24.241-04%3A00&format=rdb
+2025-04-15 12:37:24,703 - data_visualization - ERROR - Error processing data: unsupported operand type(s) for -: 'tuple' and 'int'
+2025-04-15 12:37:24,704 - __main__ - ERROR - Error occurred while processing data: Error processing data: unsupported operand type(s) for -: 'tuple' and 'int'
+2025-04-15 12:39:53,478 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 12:39:55,189 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T12%3A39%3A54.962-04%3A00&endDT=2025-04-15T12%3A39%3A54.962-04%3A00&format=rdb
+2025-04-15 12:39:55,362 - __main__ - INFO - Data processed successfully
+2025-04-15 12:41:58,124 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 12:42:00,303 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T12%3A41%3A59.194-04%3A00&endDT=2025-04-15T12%3A41%3A59.194-04%3A00&format=rdb
+2025-04-15 12:42:00,494 - __main__ - INFO - Data processed successfully
+2025-04-15 12:43:07,945 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 12:43:09,569 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T12%3A43%3A08.877-04%3A00&endDT=2025-04-15T12%3A43%3A08.877-04%3A00&format=rdb
+2025-04-15 12:43:09,759 - __main__ - INFO - Data processed successfully
+2025-04-15 12:43:49,102 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 12:43:50,346 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T12%3A43%3A50.084-04%3A00&endDT=2025-04-15T12%3A43%3A50.084-04%3A00&format=rdb
+2025-04-15 12:43:50,463 - __main__ - INFO - Data processed successfully
+2025-04-15 12:48:44,935 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 12:48:47,249 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T12%3A48%3A46.767-04%3A00&endDT=2025-04-15T12%3A48%3A46.767-04%3A00&format=rdb
+2025-04-15 12:48:47,460 - __main__ - INFO - Data processed successfully
+2025-04-15 12:52:00,693 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 12:52:02,251 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T12%3A52%3A01.967-04%3A00&endDT=2025-04-15T12%3A52%3A01.967-04%3A00&format=rdb
+2025-04-15 12:52:02,430 - __main__ - INFO - Data processed successfully
+2025-04-15 12:53:41,743 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 12:53:42,806 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T12%3A53%3A42.515-04%3A00&endDT=2025-04-15T12%3A53%3A42.515-04%3A00&format=rdb
+2025-04-15 12:53:42,896 - data_visualization - ERROR - Error processing data: 'method' object does not support item assignment
+2025-04-15 12:53:42,897 - __main__ - ERROR - Error occurred while processing data: Error processing data: 'method' object does not support item assignment
+2025-04-15 13:02:59,636 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 13:03:00,948 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T13%3A03%3A00.633-04%3A00&endDT=2025-04-15T13%3A03%3A00.633-04%3A00&format=rdb
+2025-04-15 13:03:01,122 - __main__ - INFO - Data processed successfully
+2025-04-15 13:16:45,725 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 13:16:47,830 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T13%3A16%3A47.542-04%3A00&endDT=2025-04-15T13%3A16%3A47.542-04%3A00&format=rdb
+2025-04-15 13:16:48,003 - __main__ - INFO - Data processed successfully
+2025-04-15 13:36:11,368 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 13:36:12,916 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T13%3A36%3A12.347-04%3A00&endDT=2025-04-15T13%3A36%3A12.347-04%3A00&format=rdb
+2025-04-15 13:36:13,167 - __main__ - INFO - Data processed successfully
+2025-04-15 13:37:09,726 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 13:37:10,761 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T13%3A37%3A10.488-04%3A00&endDT=2025-04-15T13%3A37%3A10.488-04%3A00&format=rdb
+2025-04-15 13:37:10,955 - __main__ - INFO - Data processed successfully
+2025-04-15 14:17:19,386 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 14:17:20,790 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T14%3A17%3A20.481-04%3A00&endDT=2025-04-15T14%3A17%3A20.481-04%3A00&format=rdb
+2025-04-15 14:17:20,964 - __main__ - INFO - Data processed successfully

@@ -62,6 +62,17 @@ def display_river_data(sample_interval, site_name):
         ax1.set_ylabel('Water Level (feet)')
         plt.title(site_name)
 
+         # Add background highlights for station 04119070
+        if '04119070' in site_name:
+            # existing y-axis minimum limit
+            ymin = ax1.get_ylim()[0]
+            # Set y-axis limits manually based on maxiumum level value plus a .5 foot offset to prevent chart from adding extra white space
+            ax1.set_ylim(ymin, (df_sampled['level'].max() +.5))  
+            # Yellow background between 7.5 and 10 feet
+            ax1.axhspan(7.5, 10, facecolor='yellow', alpha=0.3)
+            # Red background above 10 feet to the top of the y-axis
+            ax1.axhspan(10, ax1.get_ylim()[1], facecolor='red', alpha=0.3)
+
         ax1.tick_params(rotation=45)
         # Adjust x-tick frequency based on sampling interval
         tick_step = max(24 // sample_interval, 1)  # Show at least one label per day

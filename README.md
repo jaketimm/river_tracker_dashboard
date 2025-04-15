@@ -32,8 +32,12 @@ pip install PyQt5 requests pandas matplotlib
 ├── River Level Tracker.py    # Main application entry point
 ├── data_processing.py        # Data processing and manipulation logic
 ├── data_visualization.py     # Data visualization components
-├── river_level_data.rdb     # Persistent data storage
-└── river_data.log          # Application logs
+├── river_level_data.rdb      # Persistent data storage
+├── station_processer.py      # Compile CSV station list
+├── station_list_mi.csv       # List of Michigan stations
+├── real_mi.txt               # Michigan station data
+├── river_data.log            # Application logs
+└── .venv/                    # Python virtual environment
 ```
 
 ## Components
@@ -52,6 +56,10 @@ pip install PyQt5 requests pandas matplotlib
 - Creates and manages data plots
 - Handles graph customization and updates
 - Implements visualization utilities
+
+### Station Processing (`station_processer.py`)
+- Processes and compiles station lists
+- Manages station data in CSV format
 
 ## Logging
 The application maintains detailed logs in `river_data.log`, including:
