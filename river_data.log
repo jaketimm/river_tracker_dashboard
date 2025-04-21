@@ -175,3 +175,70 @@
 2025-04-15 14:17:19,386 - __main__ - INFO - Selected station ID: 04119070
 2025-04-15 14:17:20,790 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T14%3A17%3A20.481-04%3A00&endDT=2025-04-15T14%3A17%3A20.481-04%3A00&format=rdb
 2025-04-15 14:17:20,964 - __main__ - INFO - Data processed successfully
+2025-04-15 14:30:51,870 - __main__ - INFO - Selected station ID: 04119070
+2025-04-15 14:30:55,657 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-25T14%3A30%3A55.287-04%3A00&endDT=2025-04-15T14%3A30%3A55.287-04%3A00&format=rdb
+2025-04-15 14:30:55,841 - __main__ - INFO - Data processed successfully
+2025-04-21 10:54:20,842 - __main__ - INFO - Selected station ID: 04122500
+2025-04-21 10:54:26,264 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04122500&agencyCd=USGS&parameterCd=00065&startDT=2025-04-11T10%3A54%3A25.892-04%3A00&endDT=2025-04-21T10%3A54%3A25.892-04%3A00&format=rdb
+2025-04-21 10:54:26,570 - __main__ - INFO - Data processed successfully
+2025-04-21 10:54:37,397 - __main__ - INFO - Selected station ID: 04119070
+2025-04-21 10:54:41,736 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T10%3A54%3A41.526-04%3A00&endDT=2025-04-21T10%3A54%3A41.526-04%3A00&format=rdb
+2025-04-21 10:54:41,903 - __main__ - INFO - Data processed successfully
+2025-04-21 12:56:00,979 - __main__ - INFO - Selected station ID: 04031000
+2025-04-21 12:56:02,055 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T12%3A56%3A01.731-04%3A00&endDT=2025-04-21T12%3A56%3A01.731-04%3A00&format=rdb
+2025-04-21 12:56:02,269 - __main__ - INFO - Data processed successfully
+2025-04-21 12:56:17,364 - __main__ - INFO - Selected station ID: 442400084472801
+2025-04-21 12:56:18,643 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T12%3A56%3A18.510-04%3A00&endDT=2025-04-21T12%3A56%3A18.510-04%3A00&format=rdb
+2025-04-21 12:56:18,649 - data_visualization - ERROR - Required columns missing from data file
+2025-04-21 12:56:18,650 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-21 12:56:18,651 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-21 12:59:05,043 - __main__ - INFO - Selected station ID: 04033000
+2025-04-21 12:59:07,527 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04033000&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T12%3A59%3A07.161-04%3A00&endDT=2025-04-21T12%3A59%3A07.161-04%3A00&format=rdb
+2025-04-21 12:59:07,692 - __main__ - INFO - Data processed successfully
+2025-04-21 12:59:31,247 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04033000&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T12%3A59%3A31.039-04%3A00&endDT=2025-04-21T12%3A59%3A31.039-04%3A00&format=rdb
+2025-04-21 12:59:31,447 - __main__ - INFO - Data processed successfully
+2025-04-21 13:05:13,339 - __main__ - INFO - Selected station ID: 442400084472801
+2025-04-21 13:05:14,830 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T13%3A05%3A14.524-04%3A00&endDT=2025-04-21T13%3A05%3A14.524-04%3A00&format=rdb
+2025-04-21 13:05:14,841 - data_visualization - ERROR - Required columns missing from data file
+2025-04-21 13:05:14,842 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-21 13:05:14,843 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-21 13:06:32,702 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T13%3A06%3A32.565-04%3A00&endDT=2025-04-21T13%3A06%3A32.565-04%3A00&format=rdb
+2025-04-21 13:06:32,708 - data_visualization - ERROR - Required columns missing from data file
+2025-04-21 13:06:32,709 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-21 13:06:32,710 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-21 13:06:33,715 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T13%3A06%3A33.575-04%3A00&endDT=2025-04-21T13%3A06%3A33.575-04%3A00&format=rdb
+2025-04-21 13:06:33,721 - data_visualization - ERROR - Required columns missing from data file
+2025-04-21 13:06:33,722 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-21 13:06:33,723 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-21 13:06:34,438 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T13%3A06%3A34.296-04%3A00&endDT=2025-04-21T13%3A06%3A34.296-04%3A00&format=rdb
+2025-04-21 13:06:34,443 - data_visualization - ERROR - Required columns missing from data file
+2025-04-21 13:06:34,444 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-21 13:06:34,445 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-21 13:06:35,134 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T13%3A06%3A34.988-04%3A00&endDT=2025-04-21T13%3A06%3A34.988-04%3A00&format=rdb
+2025-04-21 13:06:35,141 - data_visualization - ERROR - Required columns missing from data file
+2025-04-21 13:06:35,142 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-21 13:06:35,143 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-21 13:06:35,891 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T13%3A06%3A35.755-04%3A00&endDT=2025-04-21T13%3A06%3A35.755-04%3A00&format=rdb
+2025-04-21 13:06:35,897 - data_visualization - ERROR - Required columns missing from data file
+2025-04-21 13:06:35,898 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-21 13:06:35,899 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-21 13:06:36,621 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T13%3A06%3A36.485-04%3A00&endDT=2025-04-21T13%3A06%3A36.485-04%3A00&format=rdb
+2025-04-21 13:06:36,627 - data_visualization - ERROR - Required columns missing from data file
+2025-04-21 13:06:36,628 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-21 13:06:36,628 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-21 13:21:37,285 - __main__ - INFO - Selected station ID: 04036000
+2025-04-21 13:21:39,173 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04036000&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T13%3A21%3A38.870-04%3A00&endDT=2025-04-21T13%3A21%3A38.870-04%3A00&format=rdb
+2025-04-21 13:21:39,525 - __main__ - INFO - Data processed successfully
+2025-04-21 13:26:27,922 - __main__ - INFO - Selected station ID: 442400084472801
+2025-04-21 13:26:29,139 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T13%3A26%3A28.834-04%3A00&endDT=2025-04-21T13%3A26%3A28.834-04%3A00&format=rdb
+2025-04-21 13:26:29,151 - data_visualization - ERROR - Required columns missing from data file
+2025-04-21 13:26:29,151 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-21 13:26:29,152 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-21 14:38:29,503 - __main__ - INFO - Selected station ID: 442400084472801
+2025-04-21 14:38:30,857 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T14%3A38%3A30.563-04%3A00&endDT=2025-04-21T14%3A38%3A30.563-04%3A00&format=rdb
+2025-04-21 14:38:30,871 - data_visualization - ERROR - Required columns missing from data file
+2025-04-21 14:38:30,872 - data_visualization - ERROR - Error processing data: Required columns missing from data file.
+2025-04-21 14:38:30,872 - __main__ - ERROR - Error occurred while processing data: Error processing data: Required columns missing from data file.
+2025-04-21 14:38:40,598 - __main__ - INFO - Selected station ID: 04119070
+2025-04-21 14:38:43,295 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T14%3A38%3A43.124-04%3A00&endDT=2025-04-21T14%3A38%3A43.124-04%3A00&format=rdb
+2025-04-21 14:38:43,515 - __main__ - INFO - Data processed successfully

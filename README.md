@@ -29,7 +29,7 @@ pip install PyQt5 requests pandas matplotlib
 
 ```
 .
-├── River Level Tracker.py    # Main application entry point
+├── main.py                   # Main application entry point
 ├── data_processing.py        # Data processing and manipulation logic
 ├── data_visualization.py     # Data visualization components
 ├── river_level_data.rdb      # Persistent data storage
@@ -42,7 +42,7 @@ pip install PyQt5 requests pandas matplotlib
 
 ## Components
 
-### Main Application (`River Level Tracker.py`)
+### Main Application (`main.py`)
 - Handles GUI initialization and user interactions
 - Coordinates between data processing and visualization modules
 - Manages application logging
@@ -74,7 +74,7 @@ The application maintains detailed logs in `river_data.log`, including:
 2. **Install Dependencies**: Run the pip command above to install required packages
 3. **Execute the Program**:
    ```bash
-   python "River Level Tracker.py"
+   python "main.py"
    ```
 
 

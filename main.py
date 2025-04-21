@@ -90,6 +90,11 @@ class MyApp(QWidget):
         self.button.clicked.connect(self.downloadAndDisplayData)
         layout.addWidget(self.button)
 
+        # Add status label to show download status
+        self.status_label = QLabel('', self)
+        self.status_label.setFixedWidth(350)  
+        layout.addWidget(self.status_label)
+
         # Add stretch to push content up and maintain spacing
         layout.addStretch()
 
@@ -139,9 +144,11 @@ class MyApp(QWidget):
         try:
             download_river_data(self.site_id, self.time_period)
             display_river_data(self.sample_interval, self.site_name)
+            self.status_label.setText("Download succeeded")
             logger.info("Data processed successfully")
         except Exception as e:
             error_msg = f"Error occurred while processing data: {str(e)}"
+            self.status_label.setText("Download failed: See log for details")
             logger.error(error_msg)
 
 if __name__ == '__main__':
