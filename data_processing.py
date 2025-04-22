@@ -15,8 +15,6 @@ Outputs: None
 Description: Downloads data for a selected river station from the USGS API. The data is saved locally into 
 a file named river_level_data.rdb
 '''
-
-
 def download_river_data(station_id, num_days):
     timestamp = datetime.now()
 
@@ -57,6 +55,7 @@ def download_river_data(station_id, num_days):
     except Exception as e:
         logger.error(f"Download failed - URL: {url} - Error: {str(e)}")
         raise  # Re-raise the exception to be handled by the caller
+
 
 '''
 Function: validate_API_data

@@ -1,7 +1,6 @@
 # data_visualization.py
 import pandas as pd
 import matplotlib.pyplot as plt
-import os
 import logging
 
 logger = logging.getLogger(__name__)
@@ -13,24 +12,11 @@ Outputs: None
 Description: Loads, samples data based on the sampling interval, 
 and displays the river data for a selected river station.
 '''
-
-
 def display_river_data(sample_interval, site_name):
     
     try:
         # Read the RDB file into a DataFrame
         df = pd.read_csv('river_level_data.rdb', delimiter='\t', comment='#')
-
-        # Verify that the DataFrame is not empty
-        if df.empty:
-            logger.error("Loaded data is empty")
-            raise ValueError("Loaded data is empty. Please check the data source.")
-
-        # Verify required columns exist
-        if 'datetime' not in df.columns or len(df.columns) < 5:
-            logger.error("Required columns missing from data file")
-            raise ValueError("Required columns missing from data file.")
-
         df = df.rename(columns={df.columns[4]: 'level'})
 
         # Extract the time from the 'datetime' column as a string
@@ -62,7 +48,8 @@ def display_river_data(sample_interval, site_name):
         if '04119070' in site_name:
             # existing y-axis minimum limit
             ymin = ax1.get_ylim()[0]
-            # Set y-axis limits manually based on maxiumum level value plus a .5 foot offset to prevent chart from adding extra white space
+            # Set y-axis limits manually based on maximum level value plus a .5 foot offset to prevent chart from
+            # adding extra white space
             ax1.set_ylim(ymin, (df_sampled['level'].max() +.5))  
             # Yellow background between 7.5 and 10 feet
             ax1.axhspan(7.5, 10, facecolor='yellow', alpha=0.3)

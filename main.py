@@ -85,14 +85,21 @@ class MyApp(QWidget):
         layout.addWidget(self.time_label)
 
         # Download button, set width to 250
-        self.button = QPushButton('Download and Display Data', self)
-        self.button.setFixedWidth(250)  # Set width to 250 units
-        self.button.clicked.connect(self.downloadAndDisplayData)
-        layout.addWidget(self.button)
+        self.download_button = QPushButton('Download Data', self)
+        self.download_button.setFixedWidth(250)  # Set width to 250 units
+        self.download_button.clicked.connect(self.downloadData)
+        layout.addWidget(self.download_button)
+
+        # Display button, set width to 250
+        self.display_button = QPushButton('Display Data', self)
+        self.display_button.setFixedWidth(250)  # Set width to 250 units
+        self.display_button.clicked.connect(self.displayData)
+        self.display_button.setEnabled(False)  # Initially disabled
+        layout.addWidget(self.display_button)
 
         # Add status label to show download status
         self.status_label = QLabel('', self)
-        self.status_label.setFixedWidth(350)  
+        self.status_label.setFixedWidth(350)
         layout.addWidget(self.status_label)
 
         # Add stretch to push content up and maintain spacing
@@ -127,35 +134,47 @@ class MyApp(QWidget):
         self.site_name = selected_text
         self.site_id = station_id
         logger.info(f"Selected station ID: {self.site_id}")
+        # Reset data availability when selecting a new station
+        self.display_button.setEnabled(False)
 
     def updateTimePeriod(self, value):
         self.time_period = value
         self.time_label.setText(f'{value} days')
+        # Reset data availability when changing time period
+        self.display_button.setEnabled(False)
 
     def updateSampleInterval(self, text):
         """Update the sampling interval based on dropdown selection."""
         self.sample_interval = int(text.split()[0])
 
-    def downloadAndDisplayData(self):
+    def downloadData(self):
+        """Download and validate river data."""
         if not self.site_id:
-            # Show dialog box if no station is selected
             QMessageBox.warning(self, "No Station Selected", "Please select a station before downloading data.")
             return
         try:
             download_river_data(self.site_id, self.time_period)
             data_is_valid = validate_API_data()  # validate the data downloaded from the USGS API
-            # if the data is valid, allow the data to be displayed 
             if data_is_valid:
-                display_river_data(self.sample_interval, self.site_name)
                 self.status_label.setText("Download succeeded")
-                logger.info("Data processed successfully")
+                self.display_button.setEnabled(True)
+                logger.info("Data downloaded and validated successfully")
             else:
-                self.status_label.setText("Download failed: API Data is not valid")
-                logger.error("Data is not valid")
+                self.status_label.setText("Download failed")
+                self.display_button.setEnabled(False)
+                logger.error("Downloaded data is not valid")
         except Exception as e:
-            error_msg = f"Error occurred while processing data: {str(e)}"
-            self.status_label.setText("Error Occurred: See log for details")
-            logger.error(error_msg)
+            self.status_label.setText("Download failed")
+            self.display_button.setEnabled(False)
+            logger.error(f"Error occurred while downloading data: {str(e)}")
+
+    def displayData(self):
+        """Display the downloaded river data."""
+        try:
+            display_river_data(self.sample_interval, self.site_name)
+            logger.info("Data displayed successfully")
+        except Exception as e:
+            logger.error(f"Error occurred while displaying data: {str(e)}")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
