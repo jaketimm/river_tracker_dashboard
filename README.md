@@ -51,6 +51,8 @@ pip install PyQt5 requests pandas matplotlib
 - Handles USGS data retrieval and processing
 - Implements data sampling and filtering
 - Manages data persistence
+- Contains `download_river_data()` function to fetch data from USGS API
+- Includes `validate_API_data()` function that verifies data integrity and returns a boolean status that enables visualization and data export
 
 ### Data Visualization (`data_visualization.py`)
 - Creates and manages data plots

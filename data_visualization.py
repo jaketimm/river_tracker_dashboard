@@ -16,11 +16,7 @@ and displays the river data for a selected river station.
 
 
 def display_river_data(sample_interval, site_name):
-    # Check if data file exists
-    if not os.path.exists('river_level_data.rdb'):
-        logger.error("Data file 'river_level_data.rdb' not found")
-        raise FileNotFoundError("River data file 'river_level_data.rdb' not found. Please download data first.")
-
+    
     try:
         # Read the RDB file into a DataFrame
         df = pd.read_csv('river_level_data.rdb', delimiter='\t', comment='#')
@@ -62,7 +58,7 @@ def display_river_data(sample_interval, site_name):
         ax1.set_ylabel('Water Level (feet)')
         plt.title(site_name)
 
-         # Add background highlights for station 04119070
+        # Add background highlights for station 04119070
         if '04119070' in site_name:
             # existing y-axis minimum limit
             ymin = ax1.get_ylim()[0]

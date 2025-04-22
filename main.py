@@ -4,7 +4,7 @@ import pandas as pd
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QSlider, QLabel,
                             QLineEdit, QListWidget, QVBoxLayout, QComboBox, QMessageBox)
 from PyQt5.QtCore import Qt
-from data_processing import download_river_data
+from data_processing import download_river_data, validate_API_data
 from data_visualization import display_river_data
 import logging
 
@@ -143,12 +143,18 @@ class MyApp(QWidget):
             return
         try:
             download_river_data(self.site_id, self.time_period)
-            display_river_data(self.sample_interval, self.site_name)
-            self.status_label.setText("Download succeeded")
-            logger.info("Data processed successfully")
+            data_is_valid = validate_API_data()  # validate the data downloaded from the USGS API
+            # if the data is valid, allow the data to be displayed 
+            if data_is_valid:
+                display_river_data(self.sample_interval, self.site_name)
+                self.status_label.setText("Download succeeded")
+                logger.info("Data processed successfully")
+            else:
+                self.status_label.setText("Download failed: API Data is not valid")
+                logger.error("Data is not valid")
         except Exception as e:
             error_msg = f"Error occurred while processing data: {str(e)}"
-            self.status_label.setText("Download failed: See log for details")
+            self.status_label.setText("Error Occurred: See log for details")
             logger.error(error_msg)
 
 if __name__ == '__main__':

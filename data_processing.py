@@ -1,8 +1,10 @@
 # data_processing.py
 from datetime import datetime, timedelta
 from urllib.parse import urlencode
+import pandas as pd
 import requests
 import logging
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -55,3 +57,40 @@ def download_river_data(station_id, num_days):
     except Exception as e:
         logger.error(f"Download failed - URL: {url} - Error: {str(e)}")
         raise  # Re-raise the exception to be handled by the caller
+
+'''
+Function: validate_API_data
+Inputs: None
+Outputs: flag indicating if the data is valid
+Description: Validates the data downloaded from the USGS API. 
+'''
+def validate_API_data():
+    try:
+        if not os.path.exists('river_level_data.rdb'):
+            logger.error("Data file 'river_level_data.rdb' not found")
+            return False
+
+        # Read the RDB file into a DataFrame
+        df = pd.read_csv('river_level_data.rdb', delimiter='\t', comment='#')
+
+        # Verify that the DataFrame is not empty
+        if df.empty:
+            logger.error("Loaded data is empty")
+            return False
+
+        # Verify required columns exist
+        if 'datetime' not in df.columns or len(df.columns) < 5:
+            logger.error("Required columns missing from data file")
+            return False
+
+        return True  # data is valid, allow data display and export
+
+    except pd.errors.EmptyDataError:
+        logger.error("Data file is empty or corrupt")
+        return False
+    except pd.errors.ParserError:
+        logger.error("Error parsing data file")
+        return False
+    except Exception as e:
+        logger.error(f"Error processing data: {str(e)}")
+        return False
