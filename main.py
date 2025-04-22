@@ -2,7 +2,8 @@
 import sys
 import pandas as pd
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QSlider, QLabel,
-                            QLineEdit, QListWidget, QVBoxLayout, QComboBox, QMessageBox)
+                            QLineEdit, QListWidget, QVBoxLayout, QComboBox, QMessageBox,
+                            QFileDialog)
 from PyQt5.QtCore import Qt
 from data_processing import download_river_data, validate_API_data
 from data_visualization import display_river_data
@@ -34,7 +35,7 @@ class MyApp(QWidget):
         self.sample_interval = 3  # default sampling interval
 
     def initUI(self):
-        self.setGeometry(300, 300, 400, 500)  # Increased height to accommodate layout
+        self.setGeometry(300, 300, 400, 550)  # Increased height for new button
         self.setWindowTitle('River Data Downloader')
 
         # Layout
@@ -97,6 +98,13 @@ class MyApp(QWidget):
         self.display_button.setEnabled(False)  # Initially disabled
         layout.addWidget(self.display_button)
 
+        # Export button, set width to 250
+        self.export_button = QPushButton('Export to CSV', self)
+        self.export_button.setFixedWidth(250)  # Set width to 250 units
+        self.export_button.clicked.connect(self.exportData)
+        self.export_button.setEnabled(False)  # Initially disabled
+        layout.addWidget(self.export_button)
+
         # Add status label to show download status
         self.status_label = QLabel('', self)
         self.status_label.setFixedWidth(350)
@@ -136,12 +144,14 @@ class MyApp(QWidget):
         logger.info(f"Selected station ID: {self.site_id}")
         # Reset data availability when selecting a new station
         self.display_button.setEnabled(False)
+        self.export_button.setEnabled(False)
 
     def updateTimePeriod(self, value):
         self.time_period = value
         self.time_label.setText(f'{value} days')
         # Reset data availability when changing time period
         self.display_button.setEnabled(False)
+        self.export_button.setEnabled(False)
 
     def updateSampleInterval(self, text):
         """Update the sampling interval based on dropdown selection."""
@@ -158,14 +168,17 @@ class MyApp(QWidget):
             if data_is_valid:
                 self.status_label.setText("Download succeeded")
                 self.display_button.setEnabled(True)
+                self.export_button.setEnabled(True)
                 logger.info("Data downloaded and validated successfully")
             else:
                 self.status_label.setText("Download failed")
                 self.display_button.setEnabled(False)
+                self.export_button.setEnabled(False)
                 logger.error("Downloaded data is not valid")
         except Exception as e:
             self.status_label.setText("Download failed")
             self.display_button.setEnabled(False)
+            self.export_button.setEnabled(False)
             logger.error(f"Error occurred while downloading data: {str(e)}")
 
     def displayData(self):
@@ -175,6 +188,45 @@ class MyApp(QWidget):
             logger.info("Data displayed successfully")
         except Exception as e:
             logger.error(f"Error occurred while displaying data: {str(e)}")
+
+    def exportData(self):
+        """Export downloaded data to CSV."""
+        try:
+            # Read the downloaded RDB file, skipping comment lines
+            data = pd.read_csv('river_level_data.rdb',
+                             comment='#',
+                             sep='\t',
+                             skiprows=[0],  # Skip the first non-comment line (format spec)
+                             dtype={'agency_cd': str, 'site_no': str})
+
+            # Clean column names (remove any whitespace)
+            data.columns = data.columns.str.strip()
+
+            # Generate default filename using site ID and current timestamp
+            default_filename = f"river_data_{self.site_id}_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.csv"
+
+            # Open file dialog for user to choose save location
+            file_path, _ = QFileDialog.getSaveFileName(
+                self,
+                "Save CSV File",
+                default_filename,
+                "CSV Files (*.csv);;All Files (*)"
+            )
+
+            if file_path:
+                # Export to CSV
+                data.to_csv(file_path, index=False)
+                logger.info(f"Data exported successfully to {file_path}")
+                QMessageBox.information(self, "Export Successful",
+                                     f"Data exported to {file_path}")
+            else:
+                logger.info("Export cancelled by user")
+                return
+
+        except Exception as e:
+            logger.error(f"Error occurred while exporting data: {str(e)}")
+            QMessageBox.critical(self, "Export Failed",
+                               f"Failed to export data: {str(e)}")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

@@ -382,3 +382,75 @@
 2025-04-22 14:04:57,469 - __main__ - INFO - Selected station ID: 04037400
 2025-04-22 14:04:59,275 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04037400&agencyCd=USGS&parameterCd=00065&startDT=2025-04-01T14%3A04%3A58.859-04%3A00&endDT=2025-04-22T14%3A04%3A58.859-04%3A00&format=rdb
 2025-04-22 14:04:59,281 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:15:02,823 - __main__ - INFO - Selected station ID: 04033000
+2025-04-22 14:15:04,246 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04033000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-01T14%3A15%3A03.979-04%3A00&endDT=2025-04-22T14%3A15%3A03.979-04%3A00&format=rdb
+2025-04-22 14:15:04,253 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:15:11,968 - __main__ - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04033000_20250422_141505.csv
+2025-04-22 14:15:43,498 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04033000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-11T14%3A15%3A43.348-04%3A00&endDT=2025-04-22T14%3A15%3A43.348-04%3A00&format=rdb
+2025-04-22 14:15:43,503 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:15:47,046 - __main__ - INFO - Data displayed successfully
+2025-04-22 14:15:51,093 - __main__ - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04033000_20250422_141549.csv
+2025-04-22 14:15:54,045 - __main__ - INFO - Selected station ID: 04037500
+2025-04-22 14:15:55,332 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04037500&agencyCd=USGS&parameterCd=00065&startDT=2025-04-11T14%3A15%3A55.156-04%3A00&endDT=2025-04-22T14%3A15%3A55.156-04%3A00&format=rdb
+2025-04-22 14:15:55,336 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:16:00,307 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04037500&agencyCd=USGS&parameterCd=00065&startDT=2025-04-03T14%3A16%3A00.139-04%3A00&endDT=2025-04-22T14%3A16%3A00.139-04%3A00&format=rdb
+2025-04-22 14:16:00,314 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:16:04,175 - __main__ - INFO - Selected station ID: 442400084472801
+2025-04-22 14:16:05,295 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-04-03T14%3A16%3A05.177-04%3A00&endDT=2025-04-22T14%3A16%3A05.177-04%3A00&format=rdb
+2025-04-22 14:16:05,297 - data_processing - ERROR - Required columns missing from data file
+2025-04-22 14:16:05,298 - __main__ - ERROR - Downloaded data is not valid
+2025-04-22 14:16:11,799 - __main__ - INFO - Selected station ID: 04119070
+2025-04-22 14:16:15,258 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-04-01T14%3A16%3A15.089-04%3A00&endDT=2025-04-22T14%3A16%3A15.089-04%3A00&format=rdb
+2025-04-22 14:16:15,265 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:16:16,053 - __main__ - INFO - Data displayed successfully
+2025-04-22 14:16:20,562 - __main__ - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04119070_20250422_141618.csv
+2025-04-22 14:20:40,477 - __main__ - INFO - Selected station ID: 04036000
+2025-04-22 14:20:41,686 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04036000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-01T14%3A20%3A41.386-04%3A00&endDT=2025-04-22T14%3A20%3A41.386-04%3A00&format=rdb
+2025-04-22 14:20:41,693 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:20:42,327 - __main__ - ERROR - Error occurred while exporting data to CSV: module 'pandas.compat' has no attribute 'StringIO'
+2025-04-22 14:24:32,740 - __main__ - INFO - Selected station ID: 04035995
+2025-04-22 14:24:34,282 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04035995&agencyCd=USGS&parameterCd=00065&startDT=2025-04-01T14%3A24%3A33.656-04%3A00&endDT=2025-04-22T14%3A24%3A33.656-04%3A00&format=rdb
+2025-04-22 14:24:34,288 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:24:35,005 - __main__ - INFO - Data displayed successfully
+2025-04-22 14:24:38,765 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04035995&agencyCd=USGS&parameterCd=00065&startDT=2025-04-11T14%3A24%3A38.282-04%3A00&endDT=2025-04-22T14%3A24%3A38.282-04%3A00&format=rdb
+2025-04-22 14:24:38,770 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:24:39,709 - __main__ - INFO - Selected station ID: 04037400
+2025-04-22 14:24:41,289 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04037400&agencyCd=USGS&parameterCd=00065&startDT=2025-04-11T14%3A24%3A40.836-04%3A00&endDT=2025-04-22T14%3A24%3A40.836-04%3A00&format=rdb
+2025-04-22 14:24:41,292 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:24:41,752 - __main__ - INFO - Data displayed successfully
+2025-04-22 14:24:43,740 - __main__ - ERROR - Error occurred while exporting data to CSV: module 'pandas.compat' has no attribute 'StringIO'
+2025-04-22 14:30:16,548 - __main__ - INFO - Selected station ID: 04031000
+2025-04-22 14:30:18,178 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-01T14%3A30%3A17.923-04%3A00&endDT=2025-04-22T14%3A30%3A17.923-04%3A00&format=rdb
+2025-04-22 14:30:18,183 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:30:50,042 - __main__ - INFO - Export cancelled by user
+2025-04-22 14:31:21,014 - __main__ - INFO - Selected station ID: 04031000
+2025-04-22 14:31:23,415 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-01T14%3A31%3A23.065-04%3A00&endDT=2025-04-22T14%3A31%3A23.065-04%3A00&format=rdb
+2025-04-22 14:31:23,422 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:31:29,977 - __main__ - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04031000_20250422_143124.csv
+2025-04-22 14:32:11,420 - __main__ - INFO - Selected station ID: 04031000
+2025-04-22 14:32:13,671 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-01T14%3A32%3A13.493-04%3A00&endDT=2025-04-22T14%3A32%3A13.493-04%3A00&format=rdb
+2025-04-22 14:32:13,676 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:32:17,551 - __main__ - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04031000_20250422_143214.csv
+2025-04-22 14:42:49,541 - __main__ - INFO - Selected station ID: 04032150
+2025-04-22 14:42:51,936 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04032150&agencyCd=USGS&parameterCd=00065&startDT=2025-04-01T14%3A42%3A51.427-04%3A00&endDT=2025-04-22T14%3A42%3A51.427-04%3A00&format=rdb
+2025-04-22 14:42:51,941 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:42:53,035 - __main__ - INFO - Data displayed successfully
+2025-04-22 14:42:57,404 - __main__ - INFO - Export cancelled by user
+2025-04-22 14:43:09,918 - __main__ - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04032150_20250422_144307.csv
+2025-04-22 14:44:09,394 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04032150&agencyCd=USGS&parameterCd=00065&startDT=2025-04-12T14%3A44%3A08.960-04%3A00&endDT=2025-04-22T14%3A44%3A08.960-04%3A00&format=rdb
+2025-04-22 14:44:09,398 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:44:09,987 - __main__ - INFO - Data displayed successfully
+2025-04-22 14:44:12,430 - __main__ - INFO - Selected station ID: 04037500
+2025-04-22 14:44:15,338 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04037500&agencyCd=USGS&parameterCd=00065&startDT=2025-04-02T14%3A44%3A14.899-04%3A00&endDT=2025-04-22T14%3A44%3A14.899-04%3A00&format=rdb
+2025-04-22 14:44:15,345 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:44:16,930 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04037500&agencyCd=USGS&parameterCd=00065&startDT=2025-04-12T14%3A44%3A16.483-04%3A00&endDT=2025-04-22T14%3A44%3A16.483-04%3A00&format=rdb
+2025-04-22 14:44:16,934 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:44:17,280 - __main__ - INFO - Data displayed successfully
+2025-04-22 14:57:27,093 - __main__ - INFO - Selected station ID: 04037400
+2025-04-22 14:57:28,336 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04037400&agencyCd=USGS&parameterCd=00065&startDT=2025-04-01T14%3A57%3A28.039-04%3A00&endDT=2025-04-22T14%3A57%3A28.039-04%3A00&format=rdb
+2025-04-22 14:57:28,342 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 14:57:31,266 - __main__ - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04037400_20250422_145729.csv
+2025-04-22 15:00:14,769 - __main__ - INFO - Selected station ID: 04032150
+2025-04-22 15:00:17,481 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04032150&agencyCd=USGS&parameterCd=00065&startDT=2025-04-01T15%3A00%3A17.035-04%3A00&endDT=2025-04-22T15%3A00%3A17.035-04%3A00&format=rdb
+2025-04-22 15:00:17,490 - __main__ - INFO - Data downloaded and validated successfully
+2025-04-22 15:00:20,481 - __main__ - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04032150_20250422_150018.csv
