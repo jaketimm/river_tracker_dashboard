@@ -2,7 +2,7 @@
 import sys
 import pandas as pd
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QSlider, QLabel,
-                            QLineEdit, QListWidget, QVBoxLayout, QComboBox, QMessageBox,
+                            QLineEdit, QListWidget, QVBoxLayout, QHBoxLayout, QComboBox, QMessageBox,
                             QFileDialog)
 from PyQt5.QtCore import Qt
 from data_processing import download_river_data, validate_API_data
@@ -38,7 +38,7 @@ class MyApp(QWidget):
         self.setGeometry(300, 300, 400, 550)  # Increased height for new button
         self.setWindowTitle('River Data Downloader')
 
-        # Layout
+        # Main layout
         layout = QVBoxLayout()
 
         # Search bar for station filtering
@@ -54,9 +54,15 @@ class MyApp(QWidget):
         self.station_list.itemClicked.connect(self.selectStation)
         layout.addWidget(self.station_list)
 
+        # Create horizontal layout for controls
+        controls_layout = QHBoxLayout()
+        
+        # Left side controls
+        left_layout = QVBoxLayout()
+        
         # Sampling Interval label
         self.sample_label = QLabel('Sampling Interval', self)
-        layout.addWidget(self.sample_label)
+        left_layout.addWidget(self.sample_label)
 
         # Add sampling interval dropdown, set width to 250
         self.combo_sample = QComboBox(self)
@@ -64,11 +70,11 @@ class MyApp(QWidget):
         self.combo_sample.setCurrentText('3 hours')
         self.combo_sample.setFixedWidth(250)  # Set width to 250 units
         self.combo_sample.currentTextChanged.connect(self.updateSampleInterval)
-        layout.addWidget(self.combo_sample)
+        left_layout.addWidget(self.combo_sample)
 
         # Number of Days label
         self.days_label = QLabel('Number of Days', self)
-        layout.addWidget(self.days_label)
+        left_layout.addWidget(self.days_label)
 
         # Add slider for time period
         self.slider = QSlider(Qt.Horizontal, self)
@@ -79,36 +85,49 @@ class MyApp(QWidget):
         self.slider.setTickInterval(1)
         self.slider.setFixedWidth(250)  # Match width with combo box
         self.slider.valueChanged.connect(self.updateTimePeriod)
-        layout.addWidget(self.slider)
+        left_layout.addWidget(self.slider)
 
         # Add label to display selected days
         self.time_label = QLabel('21 days', self)
-        layout.addWidget(self.time_label)
-
+        left_layout.addWidget(self.time_label)
+        
+        # Add left layout to controls layout
+        controls_layout.addLayout(left_layout)
+        
+        # Right side controls
+        right_layout = QVBoxLayout()
+        
         # Download button, set width to 250
         self.download_button = QPushButton('Download Data', self)
         self.download_button.setFixedWidth(250)  # Set width to 250 units
         self.download_button.clicked.connect(self.downloadData)
-        layout.addWidget(self.download_button)
+        right_layout.addWidget(self.download_button)
 
         # Display button, set width to 250
         self.display_button = QPushButton('Display Data', self)
         self.display_button.setFixedWidth(250)  # Set width to 250 units
         self.display_button.clicked.connect(self.displayData)
         self.display_button.setEnabled(False)  # Initially disabled
-        layout.addWidget(self.display_button)
+        right_layout.addWidget(self.display_button)
 
         # Export button, set width to 250
         self.export_button = QPushButton('Export to CSV', self)
         self.export_button.setFixedWidth(250)  # Set width to 250 units
         self.export_button.clicked.connect(self.exportData)
         self.export_button.setEnabled(False)  # Initially disabled
-        layout.addWidget(self.export_button)
+        right_layout.addWidget(self.export_button)
 
         # Add status label to show download status
         self.status_label = QLabel('', self)
         self.status_label.setFixedWidth(350)
-        layout.addWidget(self.status_label)
+        right_layout.addWidget(self.status_label)
+        
+        # Add right layout to controls layout
+        controls_layout.addLayout(right_layout)
+        controls_layout.addStretch()
+        
+        # Add the controls layout to the main layout
+        layout.addLayout(controls_layout)
 
         # Add stretch to push content up and maintain spacing
         layout.addStretch()
