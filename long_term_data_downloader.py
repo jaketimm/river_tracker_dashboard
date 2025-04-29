@@ -1,73 +1,98 @@
-import csv
-import os
+import requests
+import time
+from datetime import datetime, timedelta
+
+def create_url(start_dt, end_dt, site="04119070", parameter="00065"):
+    """Create formatted URL for data request."""
+    base_url = "https://waterservices.usgs.gov/nwis/iv/"
+    start_str = start_dt.strftime("%Y-%m-%dT%H:%M:%S.000-04:00")
+    end_str = end_dt.strftime("%Y-%m-%dT%H:%M:%S.000-04:00")
+    return (f"{base_url}?sites={site}&agencyCd=USGS&parameterCd={parameter}"
+            f"&startDT={start_str}&endDT={end_str}&format=rdb")
 
 
-# This scipt is used to update the station_list_mi.csv file with the latest station data from 
-# the real_mi.txt file. The real_mi.txt file is a list of stations that are currently in the 
-# USGS database, and can be downloaed here: https://waterwatch.usgs.gov/index.php?id=wwds_map. 
-# Select Michigan, currrent streamflow, site, Water-Resources Regions, and CSV.
+def sort_data_by_date(input_file):
+    """Sort the data in the file by date in ascending order."""
+    with open(input_file, 'r') as f:
+        lines = f.readlines()
 
-try:
-    # Check if input file exists
-    if not os.path.exists('real_mi.txt'):
-        raise FileNotFoundError("Input file 'real_mi.txt' not found")
-    
-    # Check if input file is empty
-    if os.path.getsize('real_mi.txt') == 0:
-        raise ValueError("Input file 'real_mi.txt' is empty")
-    
-    # Open input and output files
-    with open('real_mi.txt', 'r') as infile, open('station_list_mi.csv', 'w', newline='') as outfile:
-        # Read the input file contents
-        lines = infile.readlines()
-        
-        # Set up CSV reader and writer
-        reader = csv.DictReader(lines)
-        
-        # Verify required columns exist
-        if 'name' not in reader.fieldnames or 'id' not in reader.fieldnames:
-            raise ValueError("Required columns 'name' and 'id' not found in the input file")
-        
-        # Set up CSV writer with headers
-        writer = csv.writer(outfile)
-        writer.writerow(['name', 'id'])
-        
-        # Process each row
-        row_count = 0
-        for row_num, row in enumerate(reader, 1):
-            try:
-                # Extract name and ID from columns
-                name = row.get('name', '').strip()
-                station_id = row.get('id', '').strip()
-                
-                # Error checking: verify ID is numeric
-                if not station_id.isdigit():
-                    print(f"Error at row {row_num}: Station ID '{station_id}' is not numeric")
+    # Separate header and data
+    header_lines = []
+    data_lines = []
+
+    for line in lines:
+        if line.startswith('#') or line.startswith('agency_cd'):
+            header_lines.append(line.strip())
+        elif line.startswith('USGS'):
+            data_lines.append(line.strip())
+
+    # Sort data lines by date (column 3 in RDB format is datetime)
+    if data_lines:
+        # Parse datetime from third column and sort
+        data_lines.sort(key=lambda x: datetime.strptime(x.split('\t')[2], '%Y-%m-%d %H:%M'))
+
+    # Write sorted data back to file
+    with open(input_file, 'w') as f:
+        # Write headers first
+        f.write('\n'.join(header_lines) + '\n')
+        # Write sorted data
+        if data_lines:
+            f.write('\n'.join(data_lines) + '\n')
+
+
+def download_data():
+    """Download data in 7-day blocks."""
+    output_file = "river_level_data.rdb"
+    current_time = datetime.now()
+    header_written = False
+
+    # Clear existing file
+    with open(output_file, 'w') as f:
+        f.write("# USGS River Level Data\n")
+
+    # Download blocks of 7 days each
+    for block in range(15):
+        end_time = current_time - (timedelta(days=7) * block)
+        start_time = end_time - timedelta(days=7)
+
+        url = create_url(start_time, end_time)
+
+        try:
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+
+            lines = response.text.split('\n')
+            data_to_write = []
+
+            for line in lines:
+                if not line.strip():
                     continue
-                
-                # Check if station name contains 'MI'
-                if 'MI' not in name:
-                    print(f"Warning at row {row_num}: Station name '{name}' does not contain 'MI' and will be excluded")
-                    continue
-                
-                # Write to CSV
-                writer.writerow([name, station_id])
-                row_count += 1
-                
-            except Exception as e:
-                print(f"Error processing row {row_num}: {str(e)}")
-        
-        # Verify that data was written
-        if row_count == 0:
-            print("Warning: No valid data was written to the output file")
-        else:
-            print(f"Processing complete. {row_count} stations written to 'station_list_mi.csv'.")
+                if line.startswith('agency_cd') and not header_written:
+                    data_to_write.append(line)
+                    header_written = True
+                elif line.startswith('USGS'):
+                    data_to_write.append(line)
 
-except FileNotFoundError as e:
-    print(f"File error: {str(e)}")
-except ValueError as e:
-    print(f"Data error: {str(e)}")
-except csv.Error as e:
-    print(f"CSV error: {str(e)}")
-except Exception as e:
-    print(f"Unexpected error: {str(e)}")
+            if data_to_write:
+                with open(output_file, 'a') as f:
+                    f.write('\n'.join(data_to_write) + '\n')
+
+            print(f"Successfully downloaded data for {start_time.date()} to {end_time.date()}")
+
+        except requests.exceptions.HTTPError as http_err:
+            print(f"HTTP error occurred for block {block + 1}: {http_err}")
+        except requests.exceptions.RequestException as req_err:
+            print(f"Request error occurred for block {block + 1}: {req_err}")
+        except Exception as e:
+            print(f"Unexpected error occurred for block {block + 1}: {e}")
+
+        time.sleep(1.5)
+
+    # Sort the data by date after all downloads are complete
+    print("Sorting data by date...")
+    sort_data_by_date(output_file)
+    print("Data sorting complete")
+
+
+if __name__ == "__main__":
+    download_data()
