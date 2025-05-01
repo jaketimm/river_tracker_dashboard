@@ -2,10 +2,9 @@
 import sys
 import pandas as pd
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QSlider, QLabel,
-                            QLineEdit, QListWidget, QVBoxLayout, QHBoxLayout, QComboBox, QMessageBox,
-                            QFileDialog)
+                            QLineEdit, QListWidget, QVBoxLayout, QHBoxLayout, QComboBox, QMessageBox)
 from PyQt5.QtCore import Qt
-from data_processing import download_river_data, validate_API_data
+from data_processing import download_river_data, validate_API_data, export_river_data
 from data_visualization import display_river_data
 import logging
 
@@ -211,41 +210,10 @@ class MyApp(QWidget):
     def exportData(self):
         """Export downloaded data to CSV."""
         try:
-            # Read the downloaded RDB file, skipping comment lines
-            data = pd.read_csv('river_level_data.rdb',
-                             comment='#',
-                             sep='\t',
-                             skiprows=[0],  # Skip the first non-comment line (format spec)
-                             dtype={'agency_cd': str, 'site_no': str})
-
-            # Clean column names (remove any whitespace)
-            data.columns = data.columns.str.strip()
-
-            # Generate default filename using site ID and current timestamp
-            default_filename = f"river_data_{self.site_id}_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.csv"
-
-            # Open file dialog for user to choose save location
-            file_path, _ = QFileDialog.getSaveFileName(
-                self,
-                "Save CSV File",
-                default_filename,
-                "CSV Files (*.csv);;All Files (*)"
-            )
-
-            if file_path:
-                # Export to CSV
-                data.to_csv(file_path, index=False)
-                logger.info(f"Data exported successfully to {file_path}")
-                QMessageBox.information(self, "Export Successful",
-                                     f"Data exported to {file_path}")
-            else:
-                logger.info("Export cancelled by user")
-                return
-
+            export_river_data(self.site_id, parent=self)
+            
         except Exception as e:
             logger.error(f"Error occurred while exporting data: {str(e)}")
-            QMessageBox.critical(self, "Export Failed",
-                               f"Failed to export data: {str(e)}")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

@@ -86,7 +86,7 @@ def download_data():
         except Exception as e:
             print(f"Unexpected error occurred for block {block + 1}: {e}")
 
-        time.sleep(1.5)
+        time.sleep(.5)
 
     # Sort the data by date after all downloads are complete
     print("Sorting data by date...")

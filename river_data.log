@@ -484,3 +484,18 @@
 2025-04-27 15:17:58,707 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-04-06T15%3A17%3A58.347-04%3A00&endDT=2025-04-27T15%3A17%3A58.347-04%3A00&format=rdb
 2025-04-27 15:17:58,736 - data_processing - ERROR - Required columns missing from data file
 2025-04-27 15:17:58,736 - __main__ - ERROR - Downloaded data is not valid
+2025-05-01 15:06:15,672 - __main__ - INFO - Selected station ID: 04031000
+2025-05-01 15:06:16,747 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-10T15%3A06%3A16.486-04%3A00&endDT=2025-05-01T15%3A06%3A16.486-04%3A00&format=rdb
+2025-05-01 15:06:16,782 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-01 15:06:19,918 - data_processing - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04031000_20250501_150617.csv
+2025-05-01 15:06:26,310 - __main__ - INFO - Export cancelled by user
+2025-05-01 15:06:33,555 - data_processing - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04031000_20250501_150631.csv
+2025-05-01 15:08:28,610 - __main__ - INFO - Selected station ID: 04031000
+2025-05-01 15:08:30,301 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-10T15%3A08%3A29.899-04%3A00&endDT=2025-05-01T15%3A08%3A29.899-04%3A00&format=rdb
+2025-05-01 15:08:30,329 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-01 15:08:32,909 - data_processing - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04031000_20250501_150830.csv
+2025-05-01 16:22:44,964 - __main__ - INFO - Selected station ID: 04031000
+2025-05-01 16:22:48,630 - __main__ - INFO - Selected station ID: 04119070
+2025-05-01 16:22:50,175 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-04-10T16%3A22%3A49.840-04%3A00&endDT=2025-05-01T16%3A22%3A49.840-04%3A00&format=rdb
+2025-05-01 16:22:50,198 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-01 16:22:56,500 - data_processing - INFO - Data exported successfully to C:/Users/jacob/PycharmProjects/river_tracker_dashboard/river_data_04119070_20250501_162252.csv
