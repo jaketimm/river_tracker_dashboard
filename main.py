@@ -4,7 +4,7 @@ import pandas as pd
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QSlider, QLabel,
                             QLineEdit, QListWidget, QVBoxLayout, QHBoxLayout, QComboBox, QMessageBox)
 from PyQt5.QtCore import Qt
-from data_processing import download_river_data, validate_API_data, export_river_data
+from data_processing import download_river_data, validate_API_data, export_river_data, generate_summary_statistics
 from data_visualization import display_river_data
 import logging
 
@@ -116,6 +116,13 @@ class MyApp(QWidget):
         self.export_button.setEnabled(False)  # Initially disabled
         right_layout.addWidget(self.export_button)
 
+        # Export button, set width to 250
+        self.generate_stats_button = QPushButton('Summary Statistics', self)
+        self.generate_stats_button.setFixedWidth(250)  # Set width to 250 units
+        self.generate_stats_button.clicked.connect(self.generateStatistics)
+        self.generate_stats_button.setEnabled(False)  # Initially disabled
+        right_layout.addWidget(self.generate_stats_button)
+
         # Add status label to show download status
         self.status_label = QLabel('', self)
         self.status_label.setFixedWidth(350)
@@ -160,9 +167,7 @@ class MyApp(QWidget):
         self.site_name = selected_text
         self.site_id = station_id
         logger.info(f"Selected station ID: {self.site_id}")
-        # Reset data availability when selecting a new station
-        self.display_button.setEnabled(False)
-        self.export_button.setEnabled(False)
+ 
 
     def updateTimePeriod(self, value):
         self.time_period = value
@@ -170,6 +175,7 @@ class MyApp(QWidget):
         # Reset data availability when changing time period
         self.display_button.setEnabled(False)
         self.export_button.setEnabled(False)
+        self.generate_stats_button.setEnabled(False)
 
     def updateSampleInterval(self, text):
         """Update the sampling interval based on dropdown selection."""
@@ -187,16 +193,19 @@ class MyApp(QWidget):
                 self.status_label.setText("Download succeeded")
                 self.display_button.setEnabled(True)
                 self.export_button.setEnabled(True)
+                self.generate_stats_button.setEnabled(True)
                 logger.info("Data downloaded and validated successfully")
             else:
                 self.status_label.setText("Download failed")
                 self.display_button.setEnabled(False)
                 self.export_button.setEnabled(False)
+                self.generate_stats_button.setEnabled(False)
                 logger.error("Downloaded data is not valid")
         except Exception as e:
             self.status_label.setText("Download failed")
             self.display_button.setEnabled(False)
             self.export_button.setEnabled(False)
+            self.generate_stats_button.setEnabled(False)
             logger.error(f"Error occurred while downloading data: {str(e)}")
 
     def displayData(self):
@@ -214,6 +223,11 @@ class MyApp(QWidget):
             
         except Exception as e:
             logger.error(f"Error occurred while exporting data: {str(e)}")
+
+    def generateStatistics(self):
+        """Generate summary statistics for the downloaded data."""
+        generate_summary_statistics()
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

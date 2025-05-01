@@ -140,3 +140,9 @@ def export_river_data(site_id, parent=None):
         QMessageBox.critical(parent, "Export Failed",
                             f"Failed to export data: {str(e)}")
         raise Exception(f"Failed to export data: {str(e)}")
+    
+def generate_summary_statistics():
+    """Generate summary statistics for the downloaded data."""
+    print("Generating summary statistics...")
+
+
