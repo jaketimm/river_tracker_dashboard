@@ -1,6 +1,10 @@
 import requests
 import time
 from datetime import datetime, timedelta
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 def create_url(start_dt, end_dt, site="04119070", parameter="00065"):
     """Create formatted URL for data request."""
@@ -77,21 +81,19 @@ def download_data():
                 with open(output_file, 'a') as f:
                     f.write('\n'.join(data_to_write) + '\n')
 
-            print(f"Successfully downloaded data for {start_time.date()} to {end_time.date()}")
+            logger.info(f"Successfully downloaded data for {start_time.date()} to {end_time.date()}")
 
         except requests.exceptions.HTTPError as http_err:
-            print(f"HTTP error occurred for block {block + 1}: {http_err}")
+            logger.error(f"HTTP error occurred for block {block + 1}: {http_err}")
         except requests.exceptions.RequestException as req_err:
-            print(f"Request error occurred for block {block + 1}: {req_err}")
+            logger.error(f"Request error occurred for block {block + 1}: {req_err}")
         except Exception as e:
-            print(f"Unexpected error occurred for block {block + 1}: {e}")
+            logger.error(f"Unexpected error occurred for block {block + 1}: {e}")
 
         time.sleep(.5)
 
-    # Sort the data by date after all downloads are complete
-    print("Sorting data by date...")
     sort_data_by_date(output_file)
-    print("Data sorting complete")
+    logger.info("Data sorting by date complete")
 
 
 if __name__ == "__main__":
