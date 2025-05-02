@@ -141,8 +141,25 @@ def export_river_data(site_id, parent=None):
                             f"Failed to export data: {str(e)}")
         raise Exception(f"Failed to export data: {str(e)}")
     
-def generate_summary_statistics():
+def generate_summary_statistics(parent=None):
     """Generate summary statistics for the downloaded data."""
-    print("Generating summary statistics...")
+    try:
+        # Read the downloaded RDB file, skipping comment lines
+        data = pd.read_csv('river_level_data.rdb',
+                            comment='#',
+                            sep='\t',
+                            skiprows=[0],  # Skip the first non-comment line (format spec)
+                            dtype={'agency_cd': str, 'site_no': str})
 
+        # Clean column names (remove any whitespace)
+        data.columns = data.columns.str.strip()
+        data.iloc[0, 4] = data.iloc[1, 4]  # overwrite '14n' string
+        data = data.rename(columns={data.columns[4]: 'level'})
+        data = data.astype({'level': float}, errors='ignore')
+
+        level_data = data['level']
+
+
+    except Exception as e:
+        logger.error(f"Error occurred while processing data: {str(e)}")
 

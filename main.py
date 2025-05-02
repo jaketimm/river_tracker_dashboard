@@ -226,7 +226,7 @@ class MyApp(QWidget):
 
     def generateStatistics(self):
         """Generate summary statistics for the downloaded data."""
-        generate_summary_statistics()
+        generate_summary_statistics(parent=self)
 
 
 if __name__ == '__main__':
