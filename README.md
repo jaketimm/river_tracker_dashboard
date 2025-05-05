@@ -52,7 +52,9 @@ pip install PyQt5 requests pandas matplotlib
 - Implements data sampling and filtering
 - Manages data persistence
 - Contains `download_river_data()` function to fetch data from USGS API
-- Includes `validate_API_data()` function that verifies data integrity and returns a boolean status that enables visualization and data export
+- Includes `validate_API_data()` function that verifies data integrity and returns a boolean
+- Includes `export_river_data()` function that converts the current data file to a CSV and exports it.
+- status that enables visualization and data export
 
 ### Data Visualization (`data_visualization.py`)
 - Creates and manages data plots
@@ -62,6 +64,9 @@ pip install PyQt5 requests pandas matplotlib
 ### Station Processing (`station_processer.py`)
 - Processes and compiles station lists
 - Manages station data in CSV format
+
+### Long Term Data Downloader (`long_term_data_downloader.py`)
+- Downloads data one week at a time, appends and sorts data
 
 ## Logging
 The application maintains detailed logs in `river_data.log`, including:
