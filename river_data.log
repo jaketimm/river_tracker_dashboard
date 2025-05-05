@@ -526,3 +526,95 @@
 2025-05-02 09:45:57,854 - __main__ - INFO - Selected station ID: 04031000
 2025-05-02 09:46:00,618 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-11T09%3A46%3A00.330-04%3A00&endDT=2025-05-02T09%3A46%3A00.330-04%3A00&format=rdb
 2025-05-02 09:46:00,636 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 11:10:28,247 - __main__ - INFO - Selected station ID: 04031000
+2025-05-05 11:10:32,982 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T11%3A10%3A31.538-04%3A00&endDT=2025-05-05T11%3A10%3A31.538-04%3A00&format=rdb
+2025-05-05 11:10:32,993 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 11:10:54,628 - data_processing - INFO - Successfully generated and displayed summary statistics
+2025-05-05 11:22:16,201 - __main__ - INFO - Selected station ID: 04031000
+2025-05-05 11:22:17,952 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T11%3A22%3A17.509-04%3A00&endDT=2025-05-05T11%3A22%3A17.509-04%3A00&format=rdb
+2025-05-05 11:22:17,970 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 11:28:22,986 - __main__ - INFO - Selected station ID: 04031000
+2025-05-05 11:28:24,868 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T11%3A28%3A24.508-04%3A00&endDT=2025-05-05T11%3A28%3A24.508-04%3A00&format=rdb
+2025-05-05 11:28:24,880 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 11:28:31,552 - data_processing - INFO - Summary statistics generated successfully
+2025-05-05 11:28:31,554 - __main__ - INFO - Data displayed successfully
+2025-05-05 11:28:32,733 - __main__ - INFO - Selected station ID: 04035995
+2025-05-05 11:28:36,752 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04035995&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T11%3A28%3A36.552-04%3A00&endDT=2025-05-05T11%3A28%3A36.552-04%3A00&format=rdb
+2025-05-05 11:28:36,768 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 11:28:47,106 - data_processing - INFO - Summary statistics generated successfully
+2025-05-05 11:28:47,107 - __main__ - INFO - Data displayed successfully
+2025-05-05 11:28:48,972 - __main__ - INFO - Selected station ID: 04037500
+2025-05-05 11:28:54,358 - __main__ - INFO - Selected station ID: 04036000
+2025-05-05 11:28:55,264 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04036000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-24T11%3A28%3A55.088-04%3A00&endDT=2025-05-05T11%3A28%3A55.088-04%3A00&format=rdb
+2025-05-05 11:28:55,270 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 11:28:57,101 - data_processing - INFO - Summary statistics generated successfully
+2025-05-05 11:28:57,102 - __main__ - INFO - Data displayed successfully
+2025-05-05 11:37:01,334 - __main__ - INFO - Selected station ID: 04032150
+2025-05-05 11:37:06,288 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04032150&agencyCd=USGS&parameterCd=00065&startDT=2025-04-30T11%3A37%3A05.575-04%3A00&endDT=2025-05-05T11%3A37%3A05.575-04%3A00&format=rdb
+2025-05-05 11:37:06,300 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 11:37:14,163 - data_processing - INFO - Summary statistics generated and displayed successfully
+2025-05-05 11:37:14,164 - __main__ - INFO - Data statistics generated successfully
+2025-05-05 11:37:20,740 - __main__ - INFO - Selected station ID: 04035995
+2025-05-05 11:37:22,556 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04035995&agencyCd=USGS&parameterCd=00065&startDT=2025-04-30T11%3A37%3A22.201-04%3A00&endDT=2025-05-05T11%3A37%3A22.201-04%3A00&format=rdb
+2025-05-05 11:37:22,568 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 11:37:27,420 - data_processing - INFO - Summary statistics generated and displayed successfully
+2025-05-05 11:37:27,422 - __main__ - INFO - Data statistics generated successfully
+2025-05-05 12:45:18,552 - __main__ - INFO - Selected station ID: 04031000
+2025-05-05 12:45:20,274 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T12%3A45%3A19.890-04%3A00&endDT=2025-05-05T12%3A45%3A19.890-04%3A00&format=rdb
+2025-05-05 12:45:20,292 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 12:46:30,783 - data_processing - INFO - Summary statistics generated successfully
+2025-05-05 12:46:30,784 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-05 12:59:30,554 - __main__ - INFO - Selected station ID: 04031000
+2025-05-05 12:59:38,172 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T12%3A59%3A37.756-04%3A00&endDT=2025-05-05T12%3A59%3A37.756-04%3A00&format=rdb
+2025-05-05 12:59:38,179 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 13:01:03,953 - data_processing - INFO - Generated summary statistics successfully
+2025-05-05 13:01:03,953 - __main__ - INFO - Statistics generated successfully
+2025-05-05 13:03:52,385 - __main__ - INFO - Selected station ID: 04031000
+2025-05-05 13:03:53,378 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T13%3A03%3A52.975-04%3A00&endDT=2025-05-05T13%3A03%3A52.975-04%3A00&format=rdb
+2025-05-05 13:03:53,385 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 13:03:53,986 - data_processing - ERROR - Error occurred while generating statistics: "Only a column name can be used for the key in a dtype mappings argument. 'leve' not found in columns."
+2025-05-05 13:03:56,766 - __main__ - ERROR - Error occurred while generating statistics: Error occurred while generating statistics: "Only a column name can be used for the key in a dtype mappings argument. 'leve' not found in columns."
+2025-05-05 13:23:19,881 - __main__ - INFO - Selected station ID: 04032150
+2025-05-05 13:23:21,919 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04032150&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T13%3A23%3A21.389-04%3A00&endDT=2025-05-05T13%3A23%3A21.389-04%3A00&format=rdb
+2025-05-05 13:23:21,925 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 13:23:27,866 - data_processing - INFO - Summary statistics generated successfully
+2025-05-05 13:23:27,866 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-05 13:23:48,496 - __main__ - INFO - Selected station ID: 04031000
+2025-05-05 13:23:49,820 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T13%3A23%3A49.402-04%3A00&endDT=2025-05-05T13%3A23%3A49.402-04%3A00&format=rdb
+2025-05-05 13:23:49,840 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 13:23:50,484 - data_processing - ERROR - Error occurred while processing data: name 'ata' is not defined
+2025-05-05 13:23:54,333 - __main__ - ERROR - Error occurred while generating statistics: Failed to generate statistics: name 'ata' is not defined
+2025-05-05 13:24:01,169 - data_processing - ERROR - Error occurred while processing data: name 'ata' is not defined
+2025-05-05 13:24:06,503 - __main__ - ERROR - Error occurred while generating statistics: Failed to generate statistics: name 'ata' is not defined
+2025-05-05 13:25:19,060 - __main__ - INFO - Selected station ID: 04032150
+2025-05-05 13:25:21,214 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04032150&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T13%3A25%3A20.778-04%3A00&endDT=2025-05-05T13%3A25%3A20.778-04%3A00&format=rdb
+2025-05-05 13:25:21,221 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 13:25:26,447 - data_processing - INFO - Summary statistics generated successfully
+2025-05-05 13:25:26,450 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-05 13:31:26,476 - __main__ - INFO - Selected station ID: 04033000
+2025-05-05 13:31:30,222 - __main__ - INFO - Selected station ID: 04119070
+2025-05-05 13:31:31,532 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T13%3A31%3A31.112-04%3A00&endDT=2025-05-05T13%3A31%3A31.112-04%3A00&format=rdb
+2025-05-05 13:31:31,551 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 13:31:32,952 - __main__ - INFO - Data displayed successfully
+2025-05-05 13:32:01,635 - data_processing - INFO - Summary statistics generated successfully
+2025-05-05 13:32:01,636 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-05 13:32:16,574 - __main__ - INFO - Selected station ID: 04037400
+2025-05-05 13:32:17,355 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04037400&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T13%3A32%3A17.160-04%3A00&endDT=2025-05-05T13%3A32%3A17.160-04%3A00&format=rdb
+2025-05-05 13:32:17,370 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 13:32:18,019 - data_processing - ERROR - Error occurred while processing data: 'evel'
+2025-05-05 13:32:22,766 - __main__ - ERROR - Error occurred while generating statistics: Failed to generate statistics: 'evel'
+2025-05-05 14:22:46,717 - __main__ - INFO - Selected station ID: 04032150
+2025-05-05 14:22:48,154 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04032150&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T14%3A22%3A47.536-04%3A00&endDT=2025-05-05T14%3A22%3A47.536-04%3A00&format=rdb
+2025-05-05 14:22:48,162 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 14:22:48,668 - data_processing - ERROR - Error occurred while processing data: 'evel'
+2025-05-05 14:22:59,206 - __main__ - ERROR - Error occurred while generating statistics: Failed to generate statistics: 'evel'
+2025-05-05 14:24:35,143 - __main__ - INFO - Selected station ID: 04119070
+2025-05-05 14:24:38,751 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T14%3A24%3A38.446-04%3A00&endDT=2025-05-05T14%3A24%3A38.446-04%3A00&format=rdb
+2025-05-05 14:24:38,765 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 14:24:40,964 - data_processing - ERROR - Error occurred while processing data: 'evel'
+2025-05-05 14:24:42,809 - __main__ - ERROR - Error occurred while generating statistics: Failed to generate statistics: 'evel'
+2025-05-05 14:24:53,414 - __main__ - INFO - Selected station ID: 04119070
+2025-05-05 14:24:54,685 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-04-14T14%3A24%3A54.448-04%3A00&endDT=2025-05-05T14%3A24%3A54.448-04%3A00&format=rdb
+2025-05-05 14:24:54,698 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-05 14:25:04,820 - data_processing - INFO - Summary statistics generated successfully
+2025-05-05 14:25:04,824 - __main__ - INFO - Summary statistics displayed successfully

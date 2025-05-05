@@ -226,9 +226,12 @@ class MyApp(QWidget):
 
     def generateStatistics(self):
         """Generate summary statistics for the downloaded data."""
-        generate_summary_statistics(parent=self)
-
-
+        try:
+            generate_summary_statistics(parent=self)
+            logger.info("Summary statistics displayed successfully")
+        except Exception as e:
+            logger.error(f"Error occurred while generating statistics: {str(e)}")
+           
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = MyApp()

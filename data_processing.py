@@ -138,7 +138,7 @@ def export_river_data(site_id, parent=None):
     except Exception as e:
         logger.error(f"Error occurred while exporting data: {str(e)}")
         QMessageBox.critical(parent, "Export Failed",
-                            f"Failed to export data: {str(e)}")
+                            f"Failed to export data")
         raise Exception(f"Failed to export data: {str(e)}")
     
 def generate_summary_statistics(parent=None):
@@ -157,9 +157,32 @@ def generate_summary_statistics(parent=None):
         data = data.rename(columns={data.columns[4]: 'level'})
         data = data.astype({'level': float}, errors='ignore')
 
-        level_data = data['level']
+        # Calculate statistics
+        stats = {
+            'Mean': data['level'].mean(),
+            'Median': data['level'].median(),
+            'Std Dev': data['level'].std(),
+            'Min': data['level'].min(),
+            'Max': data['level'].max()
+        }
 
+        # Format statistics message with units
+        stats_message = "\n".join([f"{key}: {value:.2f} feet" for key, value in stats.items()])
+        
+        # Display in message box
+        QMessageBox.information(
+            parent,
+            "Summary Statistics",
+            stats_message
+        )
+        logger.info("Summary statistics generated successfully")
 
     except Exception as e:
         logger.error(f"Error occurred while processing data: {str(e)}")
-
+        QMessageBox.critical(
+            parent,
+            "Statistics Error",
+            f"Failed to generate statistics"
+        )
+        raise Exception(f"Failed to generate statistics: {str(e)}")
+    
