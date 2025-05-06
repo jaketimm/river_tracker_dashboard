@@ -90,7 +90,7 @@ def download_data(site_id, num_weeks):
         except Exception as e:
             logger.error(f"Unexpected error occurred for block {block + 1}: {e}")
 
-        time.sleep(.5)  # half second delay between requests (trying to be polite to the API)
+        time.sleep(.5)  # half second delay between requests
 
     sort_data_by_date(output_file)
     logger.info("Data sorting by date complete")

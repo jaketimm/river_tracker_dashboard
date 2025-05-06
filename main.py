@@ -29,7 +29,7 @@ class MyApp(QWidget):
         self.stations = self.stations_df.to_dict('records')  # List of dicts with 'name' and 'id'
 
         self.initUI()
-        self.time_period = 21  # default value of 21 days
+        self.time_period = 1  # default value of 21 days
         self.site_id = ''  # will be set when user selects a station
         self.site_name = ''
         self.sample_interval = 3  # default sampling interval
@@ -56,12 +56,12 @@ class MyApp(QWidget):
 
         # Create horizontal layout for controls
         controls_layout = QHBoxLayout()
-        
+
         # Left side controls
         left_layout = QVBoxLayout()
-        
+
         # Sampling Interval label
-        self.sample_label = QLabel('Sampling Interval', self)
+        self.sample_label = QLabel('Graph Sampling Interval', self)
         left_layout.addWidget(self.sample_label)
 
         # Add sampling interval dropdown, set width to 250
@@ -80,7 +80,7 @@ class MyApp(QWidget):
         self.slider = QSlider(Qt.Horizontal, self)
         self.slider.setMinimum(1)
         self.slider.setMaximum(52)
-        self.slider.setValue(52)
+        self.slider.setValue(1)
         self.slider.setTickPosition(QSlider.TicksBelow)
         self.slider.setTickInterval(4)  # 4 week intervals
         self.slider.setFixedWidth(250)  # Match width with combo box
@@ -88,15 +88,15 @@ class MyApp(QWidget):
         left_layout.addWidget(self.slider)
 
         # Add label to display selected days
-        self.time_label = QLabel('52 weeks', self)
+        self.time_label = QLabel('1 week', self)
         left_layout.addWidget(self.time_label)
-        
+
         # Add left layout to controls layout
         controls_layout.addLayout(left_layout)
-        
+
         # Right side controls
         right_layout = QVBoxLayout()
-        
+
         # Download button, set width to 250
         self.download_button = QPushButton('Download Data', self)
         self.download_button.setFixedWidth(250)  # Set width to 250 units
@@ -128,11 +128,11 @@ class MyApp(QWidget):
         self.status_label = QLabel('', self)
         self.status_label.setFixedWidth(350)
         right_layout.addWidget(self.status_label)
-        
+
         # Add right layout to controls layout
         controls_layout.addLayout(right_layout)
         controls_layout.addStretch()
-        
+
         # Add the controls layout to the main layout
         layout.addLayout(controls_layout)
 
@@ -169,7 +169,7 @@ class MyApp(QWidget):
         self.site_id = station_id
         self.status_label.setText(f"Selected: {self.site_id}")
         logger.info(f"Selected station ID: {self.site_id}")
- 
+
 
     def updateTimePeriod(self, value):
         self.time_period = value
@@ -194,7 +194,7 @@ class MyApp(QWidget):
             download_data(self.site_id, self.time_period)  # download station data for selected number of weeks
             data_is_valid = validate_API_data()  # validate the data downloaded from the USGS API
             if data_is_valid:
-                self.status_label.setText("Download succeeded")
+                self.status_label.setText("Download Finished")
                 self.display_button.setEnabled(True)
                 self.export_button.setEnabled(True)
                 self.generate_stats_button.setEnabled(True)
@@ -224,7 +224,7 @@ class MyApp(QWidget):
         """Export downloaded data to CSV."""
         try:
             export_river_data(self.site_id, parent=self)
-            
+
         except Exception as e:
             logger.error(f"Error occurred while exporting data: {str(e)}")
 
@@ -235,7 +235,7 @@ class MyApp(QWidget):
             logger.info("Summary statistics displayed successfully")
         except Exception as e:
             logger.error(f"Error occurred while generating statistics: {str(e)}")
-           
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = MyApp()
