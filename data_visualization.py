@@ -1,9 +1,9 @@
 # data_visualization.py
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib.dates import DateFormatter
+import numpy as np
+from matplotlib.ticker import FixedLocator, FuncFormatter
 import logging
-from datetime import timedelta
 
 logger = logging.getLogger(__name__)
 
@@ -12,7 +12,7 @@ Function: display_river_data
 Inputs: river station ID, sampling interval
 Outputs: None
 Description: Loads, samples data based on the sampling interval, 
-and displays the river data for a selected river station.
+and displays the river data for a selected river station using a compressed timescale.
 '''
 def display_river_data(sample_interval, site_name):
     try:
@@ -39,13 +39,14 @@ def display_river_data(sample_interval, site_name):
         # Convert datetime column to proper datetime objects
         df_sampled['datetime'] = pd.to_datetime(df_sampled['datetime'])
 
-        # Calculate the total number of days in the dataset
-        total_days = (df_sampled['datetime'].max() - df_sampled['datetime'].min()).days + 1
+        # Calculate the number of days in the dataset
+        time_range = (df_sampled['datetime'].max() - df_sampled['datetime'].min()).days + 1
+
+        # Create a compressed x-axis using index values
+        x_compressed = np.arange(len(df_sampled))
 
         fig, ax1 = plt.subplots(figsize=(12, 8))
-        # Plot with a continuous line, ignoring time gaps (compressed timescale)
-        ax1.plot(range(len(df_sampled)), df_sampled['level'])
-
+        ax1.plot(x_compressed, df_sampled['level'])
         ax1.set_xlabel(f'Date ({sample_interval} hr Increments)')
         ax1.set_ylabel('Water Level (feet)')
         plt.title(site_name)
@@ -53,26 +54,29 @@ def display_river_data(sample_interval, site_name):
         # Add background highlights for station 04119070
         if '04119070' in site_name:
             ymin = ax1.get_ylim()[0]
-            ax1.set_ylim(ymin, (df_sampled['level'].max() + 0.5))  
+            ax1.set_ylim(ymin, (df_sampled['level'].max() + 0.5))
             ax1.axhspan(7.5, 10, facecolor='yellow', alpha=0.3)
             ax1.axhspan(10, ax1.get_ylim()[1], facecolor='red', alpha=0.3)
 
-        # Adjust x-axis labels based on total days
-        if total_days <= 45:
+        # Set x-axis ticks based on number of days
+        if time_range <= 45:
             # 1 label per day
             tick_step = max(24 // sample_interval, 1)
         else:
             # 1 label every 5 days
             tick_step = max((24 // sample_interval) * 5, 1)
 
-        # Set custom x-ticks and labels
-        tick_positions = range(0, len(df_sampled), tick_step)
-        ax1.set_xticks(tick_positions)
-        ax1.set_xticklabels(
-            [df_sampled['datetime'].iloc[i].strftime('%Y-%m-%d %H:%M') for i in tick_positions],
-            rotation=45
-        )
+        # Create tick positions and labels
+        tick_positions = np.arange(0, len(df_sampled), tick_step)
+        tick_labels = [df_sampled['datetime'].iloc[i].strftime('%Y-%m-%d %H:%M') 
+                      for i in tick_positions if i < len(df_sampled)]
 
+        # Set ticks and labels
+        ax1.xaxis.set_major_locator(FixedLocator(tick_positions))
+        ax1.xaxis.set_major_formatter(FuncFormatter(lambda x, pos: 
+            tick_labels[int(x/tick_step)] if 0 <= int(x/tick_step) < len(tick_labels) else ''))
+        
+        ax1.tick_params(axis='x', rotation=45)
         plt.tight_layout()
         plt.show()
 
