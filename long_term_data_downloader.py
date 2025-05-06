@@ -6,7 +6,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-def create_url(start_dt, end_dt, site="04119070", parameter="00065"):
+def create_url(start_dt, end_dt, site, parameter="00065"):
     """Create formatted URL for data request."""
     base_url = "https://waterservices.usgs.gov/nwis/iv/"
     start_str = start_dt.strftime("%Y-%m-%dT%H:%M:%S.000-04:00")
@@ -44,7 +44,7 @@ def sort_data_by_date(input_file):
             f.write('\n'.join(data_lines) + '\n')
 
 
-def download_data():
+def download_data(site_id, num_weeks):
     """Download data in 7-day blocks."""
     output_file = "river_level_data.rdb"
     current_time = datetime.now()
@@ -55,11 +55,11 @@ def download_data():
         f.write("# USGS River Level Data\n")
 
     # Download blocks of 7 days each
-    for block in range(15):
+    for block in range(num_weeks):
         end_time = current_time - (timedelta(days=7) * block)
         start_time = end_time - timedelta(days=7)
 
-        url = create_url(start_time, end_time)
+        url = create_url(start_time, end_time, site_id)
 
         try:
             response = requests.get(url, timeout=10)
@@ -90,11 +90,7 @@ def download_data():
         except Exception as e:
             logger.error(f"Unexpected error occurred for block {block + 1}: {e}")
 
-        time.sleep(.5)
+        time.sleep(.5)  # half second delay between requests (trying to be polite to the API)
 
     sort_data_by_date(output_file)
     logger.info("Data sorting by date complete")
-
-
-if __name__ == "__main__":
-    download_data()

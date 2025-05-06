@@ -4,8 +4,9 @@ import pandas as pd
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QSlider, QLabel,
                             QLineEdit, QListWidget, QVBoxLayout, QHBoxLayout, QComboBox, QMessageBox)
 from PyQt5.QtCore import Qt
-from data_processing import download_river_data, validate_API_data, export_river_data, generate_summary_statistics
+from data_processing import validate_API_data, export_river_data, generate_summary_statistics
 from data_visualization import display_river_data
+from long_term_data_downloader import download_data
 import logging
 
 # Configure logging
@@ -71,23 +72,23 @@ class MyApp(QWidget):
         self.combo_sample.currentTextChanged.connect(self.updateSampleInterval)
         left_layout.addWidget(self.combo_sample)
 
-        # Number of Days label
-        self.days_label = QLabel('Number of Days', self)
+        # Number of Weeks label
+        self.days_label = QLabel('Number of Weeks', self)
         left_layout.addWidget(self.days_label)
 
-        # Add slider for time period
+        # Add slider for number of weeks
         self.slider = QSlider(Qt.Horizontal, self)
-        self.slider.setMinimum(5)
-        self.slider.setMaximum(21)
-        self.slider.setValue(21)
+        self.slider.setMinimum(1)
+        self.slider.setMaximum(52)
+        self.slider.setValue(52)
         self.slider.setTickPosition(QSlider.TicksBelow)
-        self.slider.setTickInterval(1)
+        self.slider.setTickInterval(4)  # 4 week intervals
         self.slider.setFixedWidth(250)  # Match width with combo box
         self.slider.valueChanged.connect(self.updateTimePeriod)
         left_layout.addWidget(self.slider)
 
         # Add label to display selected days
-        self.time_label = QLabel('21 days', self)
+        self.time_label = QLabel('52 weeks', self)
         left_layout.addWidget(self.time_label)
         
         # Add left layout to controls layout
@@ -172,7 +173,7 @@ class MyApp(QWidget):
 
     def updateTimePeriod(self, value):
         self.time_period = value
-        self.time_label.setText(f'{value} days')
+        self.time_label.setText(f'{value} weeks')
         # Reset data availability when changing time period
         self.display_button.setEnabled(False)
         self.export_button.setEnabled(False)
@@ -188,7 +189,9 @@ class MyApp(QWidget):
             QMessageBox.warning(self, "No Station Selected", "Please select a station before downloading data.")
             return
         try:
-            download_river_data(self.site_id, self.time_period)
+            self.status_label.setText("Downloading...")
+            QApplication.processEvents()  # Force UI to update immediately
+            download_data(self.site_id, self.time_period)  # download station data for selected number of weeks
             data_is_valid = validate_API_data()  # validate the data downloaded from the USGS API
             if data_is_valid:
                 self.status_label.setText("Download succeeded")
