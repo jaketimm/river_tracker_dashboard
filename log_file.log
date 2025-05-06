@@ -1,0 +1,118 @@
+2025-05-06 10:13:13,333 - __main__ - INFO - Selected station ID: 04035995
+2025-05-06 10:13:14,616 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04035995&agencyCd=USGS&parameterCd=00065&startDT=2025-04-15T10%3A13%3A14.226-04%3A00&endDT=2025-05-06T10%3A13%3A14.226-04%3A00&format=rdb
+2025-05-06 10:13:14,630 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:13:17,509 - data_processing - INFO - Summary statistics generated successfully
+2025-05-06 10:13:17,509 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-06 10:15:18,481 - __main__ - INFO - Selected station ID: 04032150
+2025-05-06 10:15:21,595 - __main__ - INFO - Selected station ID: 04037400
+2025-05-06 10:15:23,304 - __main__ - INFO - Selected station ID: 04031000
+2025-05-06 10:15:25,201 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-15T10%3A15%3A24.872-04%3A00&endDT=2025-05-06T10%3A15%3A24.872-04%3A00&format=rdb
+2025-05-06 10:15:25,213 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:15:28,586 - __main__ - INFO - Data displayed successfully
+2025-05-06 10:15:32,239 - __main__ - INFO - Selected station ID: 04036000
+2025-05-06 10:17:35,877 - __main__ - INFO - Selected station ID: 04032150
+2025-05-06 10:17:40,498 - __main__ - INFO - Selected station ID: 04037400
+2025-05-06 10:17:45,435 - __main__ - INFO - Selected station ID: 04119070
+2025-05-06 10:17:49,473 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-04-15T10%3A17%3A48.921-04%3A00&endDT=2025-05-06T10%3A17%3A48.921-04%3A00&format=rdb
+2025-05-06 10:17:49,486 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:17:58,217 - __main__ - INFO - Data displayed successfully
+2025-05-06 10:18:18,310 - data_processing - INFO - Summary statistics generated successfully
+2025-05-06 10:18:18,310 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-06 10:18:24,427 - __main__ - INFO - Selected station ID: 04035995
+2025-05-06 10:18:30,121 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04035995&agencyCd=USGS&parameterCd=00065&startDT=2025-04-15T10%3A18%3A29.853-04%3A00&endDT=2025-05-06T10%3A18%3A29.853-04%3A00&format=rdb
+2025-05-06 10:18:30,132 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:41:28,502 - __main__ - INFO - Selected station ID: 04031000
+2025-05-06 10:41:33,740 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-29 to 2025-05-06
+2025-05-06 10:41:34,264 - long_term_data_downloader - INFO - Data sorting by date complete
+2025-05-06 10:41:34,272 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:41:42,406 - __main__ - INFO - Data displayed successfully
+2025-05-06 10:41:53,879 - __main__ - INFO - Selected station ID: 04035995
+2025-05-06 10:41:55,412 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-29 to 2025-05-06
+2025-05-06 10:41:56,610 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-22 to 2025-04-29
+2025-05-06 10:41:57,510 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-15 to 2025-04-22
+2025-05-06 10:41:58,338 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-08 to 2025-04-15
+2025-05-06 10:41:59,173 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-01 to 2025-04-08
+2025-05-06 10:41:59,729 - long_term_data_downloader - INFO - Data sorting by date complete
+2025-05-06 10:41:59,736 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:42:05,754 - __main__ - INFO - Data displayed successfully
+2025-05-06 10:46:32,681 - __main__ - INFO - Selected station ID: 04033000
+2025-05-06 10:46:39,010 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-29 to 2025-05-06
+2025-05-06 10:46:39,683 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-22 to 2025-04-29
+2025-05-06 10:46:40,352 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-15 to 2025-04-22
+2025-05-06 10:46:41,025 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-08 to 2025-04-15
+2025-05-06 10:46:41,681 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-01 to 2025-04-08
+2025-05-06 10:46:42,344 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-03-25 to 2025-04-01
+2025-05-06 10:46:42,997 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-03-18 to 2025-03-25
+2025-05-06 10:46:43,643 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-03-11 to 2025-03-18
+2025-05-06 10:46:44,292 - long_term_data_downloader - ERROR - HTTP error occurred for block 9: 503 Server Error:  for url: https://waterservices.usgs.gov/nwis/iv/?sites=04033000&agencyCd=USGS&parameterCd=00065&startDT=2025-03-04T10:46:38.000-04:00&endDT=2025-03-11T10:46:38.000-04:00&format=rdb
+2025-05-06 10:46:44,958 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-02-25 to 2025-03-04
+2025-05-06 10:46:45,607 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-02-18 to 2025-02-25
+2025-05-06 10:46:46,261 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-02-11 to 2025-02-18
+2025-05-06 10:46:46,907 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-02-04 to 2025-02-11
+2025-05-06 10:46:47,558 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-01-28 to 2025-02-04
+2025-05-06 10:46:48,217 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-01-21 to 2025-01-28
+2025-05-06 10:46:48,879 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-01-14 to 2025-01-21
+2025-05-06 10:46:49,534 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-01-07 to 2025-01-14
+2025-05-06 10:46:50,165 - long_term_data_downloader - INFO - Data sorting by date complete
+2025-05-06 10:46:50,181 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:47:27,133 - __main__ - INFO - Data displayed successfully
+2025-05-06 10:48:16,700 - __main__ - INFO - Selected station ID: 442400084472801
+2025-05-06 10:48:19,586 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-29 to 2025-05-06
+2025-05-06 10:48:20,091 - long_term_data_downloader - INFO - Data sorting by date complete
+2025-05-06 10:48:20,094 - data_processing - ERROR - Loaded data is empty
+2025-05-06 10:48:20,095 - __main__ - ERROR - Downloaded data is not valid
+2025-05-06 10:51:44,109 - __main__ - INFO - Selected station ID: 04119070
+2025-05-06 10:51:45,764 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-29 to 2025-05-06
+2025-05-06 10:51:46,427 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-22 to 2025-04-29
+2025-05-06 10:51:47,090 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-15 to 2025-04-22
+2025-05-06 10:51:47,749 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-08 to 2025-04-15
+2025-05-06 10:51:48,311 - long_term_data_downloader - INFO - Data sorting by date complete
+2025-05-06 10:51:48,318 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:51:52,002 - __main__ - INFO - Data displayed successfully
+2025-05-06 10:52:53,124 - __main__ - INFO - Selected station ID: 04119070
+2025-05-06 10:52:57,723 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-29 to 2025-05-06
+2025-05-06 10:52:58,564 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-22 to 2025-04-29
+2025-05-06 10:52:59,411 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-15 to 2025-04-22
+2025-05-06 10:53:00,237 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-08 to 2025-04-15
+2025-05-06 10:53:01,050 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-01 to 2025-04-08
+2025-05-06 10:53:02,210 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-03-25 to 2025-04-01
+2025-05-06 10:53:02,757 - long_term_data_downloader - INFO - Data sorting by date complete
+2025-05-06 10:53:02,764 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:53:07,852 - __main__ - INFO - Data displayed successfully
+2025-05-06 10:53:48,151 - __main__ - INFO - Selected station ID: 04033000
+2025-05-06 10:53:49,460 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-29 to 2025-05-06
+2025-05-06 10:53:50,349 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-22 to 2025-04-29
+2025-05-06 10:53:50,892 - long_term_data_downloader - INFO - Data sorting by date complete
+2025-05-06 10:53:50,898 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:54:36,279 - __main__ - INFO - Selected station ID: 04036000
+2025-05-06 10:54:38,577 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-29 to 2025-05-06
+2025-05-06 10:54:39,265 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-22 to 2025-04-29
+2025-05-06 10:54:39,799 - long_term_data_downloader - INFO - Data sorting by date complete
+2025-05-06 10:54:39,804 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:54:50,963 - __main__ - INFO - Selected station ID: 04031000
+2025-05-06 10:54:51,924 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-29 to 2025-05-06
+2025-05-06 10:54:52,573 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-22 to 2025-04-29
+2025-05-06 10:54:53,213 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-15 to 2025-04-22
+2025-05-06 10:54:53,869 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-08 to 2025-04-15
+2025-05-06 10:54:54,513 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-01 to 2025-04-08
+2025-05-06 10:54:55,182 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-03-25 to 2025-04-01
+2025-05-06 10:54:55,838 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-03-18 to 2025-03-25
+2025-05-06 10:54:56,393 - long_term_data_downloader - INFO - Data sorting by date complete
+2025-05-06 10:54:56,403 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:54:59,465 - __main__ - INFO - Data displayed successfully
+2025-05-06 10:57:44,150 - __main__ - INFO - Selected station ID: 04117004
+2025-05-06 10:57:44,692 - __main__ - INFO - Selected station ID: 04119070
+2025-05-06 10:57:51,955 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-29 to 2025-05-06
+2025-05-06 10:57:52,851 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-22 to 2025-04-29
+2025-05-06 10:57:53,372 - long_term_data_downloader - INFO - Data sorting by date complete
+2025-05-06 10:57:53,377 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 10:57:58,203 - __main__ - INFO - Data displayed successfully
+2025-05-06 11:00:57,544 - __main__ - INFO - Selected station ID: 04031000
+2025-05-06 11:01:05,052 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-29 to 2025-05-06
+2025-05-06 11:01:05,716 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-22 to 2025-04-29
+2025-05-06 11:01:06,380 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-15 to 2025-04-22
+2025-05-06 11:01:07,049 - long_term_data_downloader - INFO - Successfully downloaded data for 2025-04-08 to 2025-04-15
+2025-05-06 11:01:07,585 - long_term_data_downloader - INFO - Data sorting by date complete
+2025-05-06 11:01:07,591 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-06 11:01:12,013 - __main__ - INFO - Data displayed successfully
+2025-05-06 11:01:18,402 - __main__ - INFO - Data displayed successfully
