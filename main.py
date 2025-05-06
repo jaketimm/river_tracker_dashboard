@@ -13,7 +13,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('river_data.log'),
+        logging.FileHandler('log_file.log'),
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -35,7 +35,7 @@ class MyApp(QWidget):
 
     def initUI(self):
         self.setGeometry(300, 300, 400, 550)  # Increased height for new button
-        self.setWindowTitle('River Data Downloader')
+        self.setWindowTitle('River & Lake Data Downloader')
 
         # Main layout
         layout = QVBoxLayout()
@@ -166,6 +166,7 @@ class MyApp(QWidget):
         # set name and ID
         self.site_name = selected_text
         self.site_id = station_id
+        self.status_label.setText(f"Selected: {self.site_id}")
         logger.info(f"Selected station ID: {self.site_id}")
  
 

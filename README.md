@@ -34,6 +34,7 @@ pip install PyQt5 requests pandas matplotlib
 ├── data_visualization.py     # Data visualization components
 ├── river_level_data.rdb      # Persistent data storage
 ├── station_processer.py      # Compile CSV station list
+├── long_term_data_downloader.py    # Download a year of data in one week blocks
 ├── station_list_mi.csv       # List of Michigan stations
 ├── real_mi.txt               # Michigan station data
 ├── river_data.log            # Application logs
@@ -53,7 +54,8 @@ pip install PyQt5 requests pandas matplotlib
 - Manages data persistence
 - Contains `download_river_data()` function to fetch data from USGS API
 - Includes `validate_API_data()` function that verifies data integrity and returns a boolean
-- Includes `export_river_data()` function that converts the current data file to a CSV and exports it.
+- Includes `export_river_data()` function that converts the current data file to CSV and exports it.
+- Includes `generate_summary_statistics()` function that calculates and displays basic statistics
 - status that enables visualization and data export
 
 ### Data Visualization (`data_visualization.py`)
