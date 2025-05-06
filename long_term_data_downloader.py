@@ -44,7 +44,7 @@ def sort_data_by_date(input_file):
             f.write('\n'.join(data_lines) + '\n')
 
 
-def download_data(site_id, num_weeks):
+def download_data_multiple_blocks(site_id, num_weeks):
     """Download data in 7-day blocks."""
     output_file = "river_level_data.rdb"
     current_time = datetime.now()

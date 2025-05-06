@@ -11,16 +11,16 @@ logger = logging.getLogger(__name__)
 
 '''
 Function: download_river_data
-Inputs: river station ID, number of days of data to download
+Inputs: river station ID, number of days of data to download in weeks
 Outputs: None
 Description: Downloads data for a selected river station from the USGS API. The data is saved locally into 
 a file named river_level_data.rdb
 '''
-def download_river_data(station_id, num_days):
+def download_data_single_block(station_id, num_weeks):
     timestamp = datetime.now()
 
     # Calculate date `num_days` ago
-    start_datetime = timestamp - timedelta(days=num_days)
+    start_datetime = timestamp - timedelta(days=(num_weeks *7))
 
     # Format dates as required by the USGS API
     start_dt = start_datetime.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + '-04:00'
