@@ -81,8 +81,6 @@ def download_data(site_id, num_weeks):
                 with open(output_file, 'a') as f:
                     f.write('\n'.join(data_to_write) + '\n')
 
-            logger.info(f"Successfully downloaded data for {start_time.date()} to {end_time.date()}")
-
         except requests.exceptions.HTTPError as http_err:
             logger.error(f"HTTP error occurred for block {block + 1}: {http_err}")
         except requests.exceptions.RequestException as req_err:
@@ -92,5 +90,6 @@ def download_data(site_id, num_weeks):
 
         time.sleep(.5)  # half second delay between requests
 
+    logger.info("Data download complete")
     sort_data_by_date(output_file)
     logger.info("Data sorting by date complete")

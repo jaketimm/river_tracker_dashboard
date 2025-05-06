@@ -1,7 +1,9 @@
 # data_visualization.py
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.dates import DateFormatter
 import logging
+from datetime import timedelta
 
 logger = logging.getLogger(__name__)
 
@@ -13,7 +15,6 @@ Description: Loads, samples data based on the sampling interval,
 and displays the river data for a selected river station.
 '''
 def display_river_data(sample_interval, site_name):
-    
     try:
         # Read the RDB file into a DataFrame
         df = pd.read_csv('river_level_data.rdb', delimiter='\t', comment='#')
@@ -35,33 +36,43 @@ def display_river_data(sample_interval, site_name):
         df_sampled = df_sampled.astype({'level': float}, errors='ignore')
         df_sampled.iloc[0, 4] = df_sampled.iloc[1, 4]  # overwrite '14n' string
         
-        # Convert datetime column to proper datetime objects to avoid matplotlib warning
+        # Convert datetime column to proper datetime objects
         df_sampled['datetime'] = pd.to_datetime(df_sampled['datetime'])
 
+        # Calculate the total number of days in the dataset
+        total_days = (df_sampled['datetime'].max() - df_sampled['datetime'].min()).days + 1
+
         fig, ax1 = plt.subplots(figsize=(12, 8))
-        ax1.plot(df_sampled['datetime'], df_sampled['level'])
+        # Plot with a continuous line, ignoring time gaps (compressed timescale)
+        ax1.plot(range(len(df_sampled)), df_sampled['level'])
+
         ax1.set_xlabel(f'Date ({sample_interval} hr Increments)')
         ax1.set_ylabel('Water Level (feet)')
         plt.title(site_name)
 
         # Add background highlights for station 04119070
         if '04119070' in site_name:
-            # existing y-axis minimum limit
             ymin = ax1.get_ylim()[0]
-            # Set y-axis limits manually based on maximum level value plus a .5 foot offset to prevent chart from
-            # adding extra white space
-            ax1.set_ylim(ymin, (df_sampled['level'].max() +.5))  
-            # Yellow background between 7.5 and 10 feet
+            ax1.set_ylim(ymin, (df_sampled['level'].max() + 0.5))  
             ax1.axhspan(7.5, 10, facecolor='yellow', alpha=0.3)
-            # Red background above 10 feet to the top of the y-axis
             ax1.axhspan(10, ax1.get_ylim()[1], facecolor='red', alpha=0.3)
 
-        ax1.tick_params(rotation=45)
-        # Adjust x-tick frequency based on sampling interval
-        tick_step = max(24 // sample_interval, 1)  # Show at least one label per day
-        # Set x-ticks directly from the sampled data
-        ax1.set_xticks(df_sampled['datetime'][::tick_step])
-        ax1.set_xticklabels([dt.strftime('%Y-%m-%d %H:%M') for dt in df_sampled['datetime'][::tick_step]], rotation=45)
+        # Adjust x-axis labels based on total days
+        if total_days <= 45:
+            # 1 label per day
+            tick_step = max(24 // sample_interval, 1)
+        else:
+            # 1 label every 5 days
+            tick_step = max((24 // sample_interval) * 5, 1)
+
+        # Set custom x-ticks and labels
+        tick_positions = range(0, len(df_sampled), tick_step)
+        ax1.set_xticks(tick_positions)
+        ax1.set_xticklabels(
+            [df_sampled['datetime'].iloc[i].strftime('%Y-%m-%d %H:%M') for i in tick_positions],
+            rotation=45
+        )
+
         plt.tight_layout()
         plt.show()
 
