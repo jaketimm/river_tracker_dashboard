@@ -34,10 +34,9 @@ pip install PyQt5 requests pandas matplotlib
 ├── data_visualization.py     # Data visualization components
 ├── river_level_data.rdb      # Persistent data storage
 ├── station_processer.py      # Compile CSV station list
-├── long_term_data_downloader.py    # Download a year of data in one week blocks
 ├── station_list_mi.csv       # List of Michigan stations
 ├── real_mi.txt               # Michigan station data
-├── river_data.log            # Application logs
+├── log_file.log              # Application logs
 └── .venv/                    # Python virtual environment
 ```
 
@@ -50,13 +49,9 @@ pip install PyQt5 requests pandas matplotlib
 
 ### Data Processing (`data_processing.py`)
 - Handles USGS data retrieval and processing
-- Implements data sampling and filtering
+- Implements data sampling, filtering, and validation
 - Manages data persistence
-- Contains `download_river_data()` function to fetch data from USGS API
-- Includes `validate_API_data()` function that verifies data integrity and returns a boolean
-- Includes `export_river_data()` function that converts the current data file to CSV and exports it.
-- Includes `generate_summary_statistics()` function that calculates and displays basic statistics
-- status that enables visualization and data export
+
 
 ### Data Visualization (`data_visualization.py`)
 - Creates and manages data plots
@@ -67,11 +62,9 @@ pip install PyQt5 requests pandas matplotlib
 - Processes and compiles station lists
 - Manages station data in CSV format
 
-### Long Term Data Downloader (`long_term_data_downloader.py`)
-- Downloads data one week at a time, appends and sorts data
 
 ## Logging
-The application maintains detailed logs in `river_data.log`, including:
+The application maintains detailed logs in `log_file.log`, including:
 - Data retrieval operations
 - Processing steps
 - Error conditions

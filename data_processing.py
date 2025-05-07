@@ -5,12 +5,118 @@ import pandas as pd
 import requests
 import logging
 import os
+import time
 from PyQt5.QtWidgets import QMessageBox, QFileDialog
 
 logger = logging.getLogger(__name__)
 
 '''
-Function: download_river_data
+Function: create_url
+Inputs: start_dt, end_dt, site, parameter
+Outputs: URL string
+Description: Create formatted URL for data request.
+'''
+def create_url(start_dt, end_dt, site, parameter="00065"):
+    """Create formatted URL for data request."""
+    base_url = "https://waterservices.usgs.gov/nwis/iv/"
+    start_str = start_dt.strftime("%Y-%m-%dT%H:%M:%S.000-04:00")
+    end_str = end_dt.strftime("%Y-%m-%dT%H:%M:%S.000-04:00")
+    return (f"{base_url}?sites={site}&agencyCd=USGS&parameterCd={parameter}"
+            f"&startDT={start_str}&endDT={end_str}&format=rdb")
+
+'''
+Function: sort_data_by_date
+Inputs: input_file path
+Outputs: None
+Description: Sort the data in the file by date in ascending order.
+'''
+def sort_data_by_date(input_file):
+    """Sort the data in the file by date in ascending order."""
+    with open(input_file, 'r') as f:
+        lines = f.readlines()
+
+    # Separate header and data
+    header_lines = []
+    data_lines = []
+
+    for line in lines:
+        if line.startswith('#') or line.startswith('agency_cd'):
+            header_lines.append(line.strip())
+        elif line.startswith('USGS'):
+            data_lines.append(line.strip())
+
+    # Sort data lines by date (column 3 in RDB format is datetime)
+    if data_lines:
+        # Parse datetime from third column and sort
+        data_lines.sort(key=lambda x: datetime.strptime(x.split('\t')[2], '%Y-%m-%d %H:%M'))
+
+    # Write sorted data back to file
+    with open(input_file, 'w') as f:
+        # Write headers first
+        f.write('\n'.join(header_lines) + '\n')
+        # Write sorted data
+        if data_lines:
+            f.write('\n'.join(data_lines) + '\n')
+
+'''
+Function: download_data_multiple_blocks
+Inputs: river station ID, number of weeks of data to download
+Outputs: None
+Description: Downloads data for a selected river station from the USGS API in 7-day blocks.
+The data is saved locally into a file named river_level_data.rdb
+'''
+def download_data_multiple_blocks(site_id, num_weeks):
+    """Download data in 7-day blocks."""
+    output_file = "river_level_data.rdb"
+    current_time = datetime.now()
+    header_written = False
+
+    # Clear existing file
+    with open(output_file, 'w') as f:
+        f.write("# USGS River Level Data\n")
+
+    # Download blocks of 7 days each
+    for block in range(num_weeks):
+        end_time = current_time - (timedelta(days=7) * block)
+        start_time = end_time - timedelta(days=7)
+
+        url = create_url(start_time, end_time, site_id)
+
+        try:
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+
+            lines = response.text.split('\n')
+            data_to_write = []
+
+            for line in lines:
+                if not line.strip():
+                    continue
+                if line.startswith('agency_cd') and not header_written:
+                    data_to_write.append(line)
+                    header_written = True
+                elif line.startswith('USGS'):
+                    data_to_write.append(line)
+
+            if data_to_write:
+                with open(output_file, 'a') as f:
+                    f.write('\n'.join(data_to_write) + '\n')
+
+        except requests.exceptions.HTTPError as http_err:
+            logger.error(f"HTTP error occurred for block {block + 1}: {http_err}")
+        except requests.exceptions.RequestException as req_err:
+            logger.error(f"Request error occurred for block {block + 1}: {req_err}")
+        except Exception as e:
+            logger.error(f"Unexpected error occurred for block {block + 1}: {e}")
+
+        time.sleep(.5)  # half second delay between requests
+
+    logger.info("Data download complete")
+    sort_data_by_date(output_file)
+    logger.info("Data sorting by date complete")
+
+'''
+Function: download_data_single_block
 Inputs: river station ID, number of days of data to download in weeks
 Outputs: None
 Description: Downloads data for a selected river station from the USGS API. The data is saved locally into 
@@ -57,7 +163,6 @@ def download_data_single_block(station_id, num_weeks):
         logger.error(f"Download failed - URL: {url} - Error: {str(e)}")
         raise  # Re-raise the exception to be handled by the caller
 
-
 '''
 Function: validate_API_data
 Inputs: None
@@ -96,7 +201,7 @@ def validate_API_data():
         return False
 
 '''
-Function: export_river_data
+Function: export_data
 Inputs: site_id for filename generation, parent widget for dialogs
 Outputs: None
 Description: Exports the downloaded river data to a CSV file. Raises exceptions on failure.
@@ -185,4 +290,3 @@ def generate_summary_statistics(parent=None):
             f"Failed to generate statistics"
         )
         raise Exception(f"Failed to generate statistics: {str(e)}")
-    

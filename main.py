@@ -4,9 +4,8 @@ import pandas as pd
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QSlider, QLabel,
                             QLineEdit, QListWidget, QVBoxLayout, QHBoxLayout, QComboBox, QMessageBox)
 from PyQt5.QtCore import Qt
-from data_processing import validate_API_data, export_data, generate_summary_statistics, download_data_single_block
+from data_processing import validate_API_data, export_data, generate_summary_statistics, download_data_single_block, download_data_multiple_blocks
 from data_visualization import display_data
-from block_data_downloader import download_data_multiple_blocks
 import logging
 
 # Configure logging
@@ -191,8 +190,8 @@ class MyApp(QWidget):
         try:
             self.status_label.setText("Downloading...")
             QApplication.processEvents()  # Force UI to update immediately
-            # download_data_multiple_blocks(self.site_id, self.time_period)  # download station data for selected number of weeks
-            download_data_single_block(self.site_id, self.time_period)  # download station data for selected number of weeks
+            download_data_multiple_blocks(self.site_id, self.time_period)  # download station data for selected number of weeks
+            # download_data_single_block(self.site_id, self.time_period)  # download station data for selected number of weeks
             data_is_valid = validate_API_data()  # validate the data downloaded from the USGS API
             if data_is_valid:
                 self.status_label.setText("Download Finished")

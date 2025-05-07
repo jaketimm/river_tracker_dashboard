@@ -83,3 +83,16 @@
 2025-05-07 10:39:40,633 - __main__ - INFO - Summary statistics displayed successfully
 2025-05-07 10:39:45,842 - data_processing - INFO - Summary statistics generated successfully
 2025-05-07 10:39:45,844 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-07 13:27:52,241 - __main__ - INFO - Selected station ID: 04032150
+2025-05-07 13:27:54,051 - data_processing - INFO - Data download complete
+2025-05-07 13:27:54,073 - data_processing - INFO - Data sorting by date complete
+2025-05-07 13:27:54,079 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-07 13:27:55,045 - __main__ - INFO - Data displayed successfully
+2025-05-07 13:28:00,035 - data_processing - INFO - Export cancelled by user
+2025-05-07 13:28:05,568 - data_processing - INFO - Data download complete
+2025-05-07 13:28:05,608 - data_processing - INFO - Data sorting by date complete
+2025-05-07 13:28:05,616 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-07 13:28:11,285 - __main__ - INFO - Data displayed successfully
+2025-05-07 13:28:17,521 - data_processing - INFO - Export cancelled by user
+2025-05-07 13:28:21,243 - data_processing - INFO - Summary statistics generated successfully
+2025-05-07 13:28:21,245 - __main__ - INFO - Summary statistics displayed successfully
