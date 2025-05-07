@@ -101,7 +101,7 @@ Inputs: site_id for filename generation, parent widget for dialogs
 Outputs: None
 Description: Exports the downloaded river data to a CSV file. Raises exceptions on failure.
 '''
-def export_river_data(site_id, parent=None):
+def export_data(site_id, parent=None):
     """Export downloaded data to CSV."""
     try:
         # Read the downloaded RDB file, skipping comment lines

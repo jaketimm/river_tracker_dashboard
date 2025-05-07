@@ -14,7 +14,7 @@ Outputs: None
 Description: Loads, samples data based on the sampling interval, 
 and displays the river data for a selected river station using a compressed timescale.
 '''
-def display_river_data(sample_interval, site_name):
+def display_data(sample_interval, site_name):
     try:
         # Read the RDB file into a DataFrame
         df = pd.read_csv('river_level_data.rdb', delimiter='\t', comment='#')

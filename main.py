@@ -4,9 +4,9 @@ import pandas as pd
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QSlider, QLabel,
                             QLineEdit, QListWidget, QVBoxLayout, QHBoxLayout, QComboBox, QMessageBox)
 from PyQt5.QtCore import Qt
-from data_processing import validate_API_data, export_river_data, generate_summary_statistics, download_data_single_block
-from data_visualization import display_river_data
-from long_term_data_downloader import download_data_multiple_blocks
+from data_processing import validate_API_data, export_data, generate_summary_statistics, download_data_single_block
+from data_visualization import display_data
+from block_data_downloader import download_data_multiple_blocks
 import logging
 
 # Configure logging
@@ -216,7 +216,7 @@ class MyApp(QWidget):
     def displayData(self):
         """Display the downloaded river data."""
         try:
-            display_river_data(self.sample_interval, self.site_name)
+            display_data(self.sample_interval, self.site_name)
             logger.info("Data displayed successfully")
         except Exception as e:
             logger.error(f"Error occurred while displaying data: {str(e)}")
@@ -224,7 +224,7 @@ class MyApp(QWidget):
     def exportData(self):
         """Export downloaded data to CSV."""
         try:
-            export_river_data(self.site_id, parent=self)
+            export_data(self.site_id, parent=self)
 
         except Exception as e:
             logger.error(f"Error occurred while exporting data: {str(e)}")
