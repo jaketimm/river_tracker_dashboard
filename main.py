@@ -172,7 +172,7 @@ class MyApp(QWidget):
 
     def updateTimePeriod(self, value):
         self.time_period = value
-        self.time_label.setText(f'{value} weeks')
+        self.time_label.setText(f'{value} week(s)')
         # Reset data availability when changing time period
         self.display_button.setEnabled(False)
         self.export_button.setEnabled(False)
@@ -190,7 +190,7 @@ class MyApp(QWidget):
         try:
             self.status_label.setText("Downloading...")
             QApplication.processEvents()  # Force UI to update immediately
-            download_data_multiple_blocks(self.site_id, self.time_period)  # download station data for selected number of weeks
+            download_data_multiple_blocks(self.site_id, self.time_period, parent=self)  # download station data for selected number of weeks
             # download_data_single_block(self.site_id, self.time_period)  # download station data for selected number of weeks
             data_is_valid = validate_API_data()  # validate the data downloaded from the USGS API
             if data_is_valid:

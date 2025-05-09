@@ -7,7 +7,7 @@ A Python-based system for tracking and visualizing river level data from USGS st
 - Interactive GUI for station selection and data visualization
 - Modular architecture with separate components for data processing and visualization
 - Comprehensive logging system for debugging and monitoring
-- Flexible data sampling and display options (5-21 days)
+- Flexible data sampling and display options (1-52 weeks)
 - Persistent data storage using RDB format
 
 ## Prerequisites

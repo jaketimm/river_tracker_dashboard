@@ -65,11 +65,12 @@ Outputs: None
 Description: Downloads data for a selected river station from the USGS API in 7-day blocks.
 The data is saved locally into a file named river_level_data.rdb
 '''
-def download_data_multiple_blocks(site_id, num_weeks):
+def download_data_multiple_blocks(site_id, num_weeks, parent=None):
     """Download data in 7-day blocks."""
     output_file = "river_level_data.rdb"
     current_time = datetime.now()
     header_written = False
+    failed_blocks = []
 
     # Clear existing file
     with open(output_file, 'w') as f:
@@ -103,13 +104,21 @@ def download_data_multiple_blocks(site_id, num_weeks):
                     f.write('\n'.join(data_to_write) + '\n')
 
         except requests.exceptions.HTTPError as http_err:
-            logger.error(f"HTTP error occurred for block {block + 1}: {http_err}")
+            failed_blocks.append((start_time, end_time))
+            logger.error(f"HTTP error occurred for time range {start_time} to {end_time}: {http_err}")
         except requests.exceptions.RequestException as req_err:
-            logger.error(f"Request error occurred for block {block + 1}: {req_err}")
+            failed_blocks.append((start_time, end_time))
+            logger.error(f"Request error occurred for time range {start_time} to {end_time}: {req_err}")
         except Exception as e:
-            logger.error(f"Unexpected error occurred for block {block + 1}: {e}")
+            failed_blocks.append((start_time, end_time))
+            logger.error(f"Unexpected error occurred for time range {start_time} to {end_time}: {e}")
 
         time.sleep(.5)  # half second delay between requests
+
+    # Show warning popup if any blocks failed
+    if failed_blocks and parent:
+        failed_ranges = "\n".join([f"{start.strftime('%Y-%m-%d')} to {end.strftime('%Y-%m-%d')}" for start, end in failed_blocks])
+        QMessageBox.warning(parent, "Download Warning", f"Failed to download data for the following time range(s):\n{failed_ranges}")
 
     logger.info("Data download complete")
     sort_data_by_date(output_file)

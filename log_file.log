@@ -96,3 +96,27 @@
 2025-05-07 13:28:17,521 - data_processing - INFO - Export cancelled by user
 2025-05-07 13:28:21,243 - data_processing - INFO - Summary statistics generated successfully
 2025-05-07 13:28:21,245 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-09 09:55:38,252 - __main__ - INFO - Selected station ID: 04031000
+2025-05-09 09:55:47,188 - data_processing - ERROR - HTTP error occurred for block from 2025-03-07 to 2025-03-14: 503 Server Error:  for url: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-03-07T09:55:39.000-04:00&endDT=2025-03-14T09:55:39.000-04:00&format=rdb
+2025-05-09 09:56:03,638 - data_processing - INFO - Data download complete
+2025-05-09 09:56:03,780 - data_processing - INFO - Data sorting by date complete
+2025-05-09 09:56:03,799 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 09:56:06,377 - __main__ - INFO - Data displayed successfully
+2025-05-09 09:56:11,669 - __main__ - INFO - Selected station ID: 04119070
+2025-05-09 09:56:20,930 - data_processing - ERROR - HTTP error occurred for block from 2025-03-07 to 2025-03-14: 503 Server Error:  for url: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-07T09:56:13.000-04:00&endDT=2025-03-14T09:56:13.000-04:00&format=rdb
+2025-05-09 09:56:36,099 - data_processing - INFO - Data download complete
+2025-05-09 09:56:36,230 - data_processing - INFO - Data sorting by date complete
+2025-05-09 09:56:36,247 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 10:03:48,368 - __main__ - INFO - Selected station ID: 04031000
+2025-05-09 10:03:50,533 - data_processing - INFO - Data download complete
+2025-05-09 10:03:50,561 - data_processing - INFO - Data sorting by date complete
+2025-05-09 10:03:50,569 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 10:03:53,442 - __main__ - INFO - Data displayed successfully
+2025-05-09 10:03:58,698 - data_processing - INFO - Summary statistics generated successfully
+2025-05-09 10:03:58,703 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-09 10:07:53,788 - __main__ - INFO - Selected station ID: 04119070
+2025-05-09 10:08:05,131 - data_processing - ERROR - HTTP error occurred for time range 2025-03-07 10:07:59.263148 to 2025-03-14 10:07:59.263148: 503 Server Error:  for url: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-07T10:07:59.000-04:00&endDT=2025-03-14T10:07:59.000-04:00&format=rdb
+2025-05-09 10:08:11,315 - data_processing - INFO - Data download complete
+2025-05-09 10:08:11,436 - data_processing - INFO - Data sorting by date complete
+2025-05-09 10:08:11,458 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 10:08:15,989 - __main__ - INFO - Data displayed successfully
