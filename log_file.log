@@ -134,3 +134,39 @@
 2025-05-09 10:22:07,970 - data_processing - INFO - Data sorting by date complete
 2025-05-09 10:22:07,990 - __main__ - INFO - Data downloaded and validated successfully
 2025-05-09 10:22:13,604 - __main__ - INFO - Data displayed successfully
+2025-05-09 13:26:20,119 - __main__ - INFO - Selected station ID: 04031000
+2025-05-09 13:26:32,796 - data_processing - INFO - Data download complete
+2025-05-09 13:26:32,879 - data_processing - INFO - Data sorting by date complete
+2025-05-09 13:26:32,890 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 13:26:34,710 - __main__ - INFO - Monthly average data displayed successfully
+2025-05-09 13:27:02,537 - data_processing - ERROR - HTTP error occurred for time range 2025-03-07 13:26:55.425869 to 2025-03-14 13:26:55.425869: 503 Server Error:  for url: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-03-07T13:26:55.000-04:00&endDT=2025-03-14T13:26:55.000-04:00&format=rdb
+2025-05-09 13:27:15,064 - data_processing - INFO - Data download complete
+2025-05-09 13:27:15,302 - data_processing - INFO - Data sorting by date complete
+2025-05-09 13:27:15,328 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 13:27:18,896 - __main__ - INFO - Monthly average data displayed successfully
+2025-05-09 13:36:29,907 - __main__ - INFO - Selected station ID: 04031000
+2025-05-09 13:36:34,694 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-03-28T13%3A36%3A34.277-04%3A00&endDT=2025-05-09T13%3A36%3A34.277-04%3A00&format=rdb
+2025-05-09 13:36:34,707 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 13:36:36,774 - data_visualization - ERROR - Error processing data: Unknown datetime string format, unable to parse: 20d, at position 0
+2025-05-09 13:36:36,775 - __main__ - ERROR - Error occurred while displaying monthly averages: Error processing data: Unknown datetime string format, unable to parse: 20d, at position 0
+2025-05-09 13:38:39,557 - __main__ - INFO - Selected station ID: 04031000
+2025-05-09 13:38:44,892 - data_processing - INFO - Data download complete
+2025-05-09 13:38:44,925 - data_processing - INFO - Data sorting by date complete
+2025-05-09 13:38:44,930 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 13:38:47,025 - __main__ - INFO - Selected station ID: 04033000
+2025-05-09 13:38:48,791 - __main__ - INFO - Selected station ID: 04037400
+2025-05-09 13:46:47,425 - __main__ - INFO - Selected station ID: 04031000
+2025-05-09 13:47:01,347 - data_processing - ERROR - HTTP error occurred for time range 2025-03-07 13:46:53.955568 to 2025-03-14 13:46:53.955568: 503 Server Error:  for url: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-03-07T13:46:53.000-04:00&endDT=2025-03-14T13:46:53.000-04:00&format=rdb
+2025-05-09 13:47:08,923 - data_processing - INFO - Data download complete
+2025-05-09 13:47:09,067 - data_processing - INFO - Data sorting by date complete
+2025-05-09 13:47:09,085 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 13:47:12,941 - __main__ - INFO - Monthly average data displayed successfully
+2025-05-09 14:16:45,230 - __main__ - INFO - Selected station ID: 04119070
+2025-05-09 14:16:52,140 - data_processing - ERROR - HTTP error occurred for time range 2025-03-07 14:16:46.462745 to 2025-03-14 14:16:46.462745: 503 Server Error:  for url: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-07T14:16:46.000-04:00&endDT=2025-03-14T14:16:46.000-04:00&format=rdb
+2025-05-09 14:17:05,907 - data_processing - INFO - Data download complete
+2025-05-09 14:17:06,201 - data_processing - INFO - Data sorting by date complete
+2025-05-09 14:17:06,236 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 14:17:10,322 - __main__ - INFO - Data displayed successfully
+2025-05-09 14:17:33,702 - data_processing - INFO - Summary statistics generated successfully
+2025-05-09 14:17:33,702 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-09 14:17:35,672 - __main__ - INFO - Monthly average data displayed successfully

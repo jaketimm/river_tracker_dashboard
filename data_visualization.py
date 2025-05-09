@@ -89,3 +89,56 @@ def display_data(sample_interval, site_name):
     except Exception as e:
         logger.error(f"Error processing data: {str(e)}")
         raise RuntimeError(f"Error processing data: {str(e)}")
+
+
+def display_monthly_averages(site_name):
+    try:
+        # Read the RDB file into a DataFrame
+        df = pd.read_csv('river_level_data.rdb', delimiter='\t', comment='#')
+        df = df.rename(columns={df.columns[4]: 'level'})
+        
+        # Convert level values from string to numeric, handling any non-numeric values
+        df['level'] = pd.to_numeric(df['level'], errors='coerce')
+        
+        # Convert datetime column to proper datetime objects
+        df['datetime'] = pd.to_datetime(df['datetime'])
+        
+        # Extract month from datetime and create a new column
+        df['month'] = df['datetime'].dt.month
+        
+        # Group by month and calculate average level
+        monthly_avg = df.groupby('month')['level'].mean().reset_index()
+        
+        # Create month names for x-axis labels
+        month_names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        
+        # Create the bar chart
+        plt.figure(figsize=(10, 6))
+        bars = plt.bar(monthly_avg['month'], monthly_avg['level'], color='skyblue')
+        
+        # Add data labels on top of each bar
+        for bar in bars:
+            height = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width()/2., height + 0.05,
+                    f'{height:.2f}', ha='center', va='bottom')
+        
+        # Set x-axis ticks and labels
+        plt.xticks(monthly_avg['month'], [month_names[i-1] for i in monthly_avg['month']])
+        
+        plt.xlabel('Month')
+        plt.ylabel('Average Water Level (feet)')
+        plt.title(site_name + ': Monthly Average Water Levels')
+        plt.grid(axis='y', linestyle='--', alpha=0.7)
+        plt.tight_layout()
+        plt.show()
+        
+    except pd.errors.EmptyDataError:
+        logger.error("Data file is empty or corrupt")
+        raise ValueError("Data file is empty or corrupt. Please download data again.")
+    except pd.errors.ParserError:
+        logger.error("Error parsing data file")
+        raise ValueError("Error parsing data file. File format may be incorrect.")
+    except Exception as e:
+        logger.error(f"Error processing data: {str(e)}")
+        raise RuntimeError(f"Error processing data: {str(e)}")

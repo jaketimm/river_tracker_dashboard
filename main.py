@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QSlider, QLabel
                             QLineEdit, QListWidget, QVBoxLayout, QHBoxLayout, QComboBox, QMessageBox)
 from PyQt5.QtCore import Qt
 from data_processing import validate_API_data, export_data, generate_summary_statistics, download_data_single_block, download_data_multiple_blocks
-from data_visualization import display_data
+from data_visualization import display_data, display_monthly_averages
 import logging
 
 # Configure logging
@@ -105,7 +105,7 @@ class MyApp(QWidget):
         # Add left layout to controls layout
         controls_layout.addLayout(left_layout)
 
-        # Right side controls
+       # Right side controls
         right_layout = QVBoxLayout()
 
         # Download button, set width to 250
@@ -120,6 +120,13 @@ class MyApp(QWidget):
         self.display_button.clicked.connect(self.displayData)
         self.display_button.setEnabled(False)  # Initially disabled
         right_layout.addWidget(self.display_button)
+        
+        # Monthly averages button, set width to 250
+        self.monthly_avg_button = QPushButton('Monthly Averages', self)
+        self.monthly_avg_button.setFixedWidth(250)  # Set width to 250 units
+        self.monthly_avg_button.clicked.connect(self.displayMonthlyAverages)
+        self.monthly_avg_button.setEnabled(False)  # Initially disabled
+        right_layout.addWidget(self.monthly_avg_button)
 
         # Export button, set width to 250
         self.export_button = QPushButton('Export to CSV', self)
@@ -189,6 +196,7 @@ class MyApp(QWidget):
         self.display_button.setEnabled(False)
         self.export_button.setEnabled(False)
         self.generate_stats_button.setEnabled(False)
+        self.monthly_avg_button.setEnabled(False)  # Disable monthly averages button
 
     def updateSampleInterval(self, text):
         """Update the sampling interval based on dropdown selection."""
@@ -216,18 +224,21 @@ class MyApp(QWidget):
                 self.display_button.setEnabled(True)
                 self.export_button.setEnabled(True)
                 self.generate_stats_button.setEnabled(True)
+                self.monthly_avg_button.setEnabled(True)  # Enable monthly averages button
                 logger.info("Data downloaded and validated successfully")
             else:
                 self.status_label.setText("Download failed")
                 self.display_button.setEnabled(False)
                 self.export_button.setEnabled(False)
                 self.generate_stats_button.setEnabled(False)
+                self.monthly_avg_button.setEnabled(False)  # Disable monthly averages button
                 logger.error("Downloaded data is not valid")
         except Exception as e:
             self.status_label.setText("Download failed")
             self.display_button.setEnabled(False)
             self.export_button.setEnabled(False)
             self.generate_stats_button.setEnabled(False)
+            self.monthly_avg_button.setEnabled(False)  # Disable monthly averages button
             logger.error(f"Error occurred while downloading data: {str(e)}")
             
     def displayData(self):
@@ -237,6 +248,15 @@ class MyApp(QWidget):
             logger.info("Data displayed successfully")
         except Exception as e:
             logger.error(f"Error occurred while displaying data: {str(e)}")
+    
+    def displayMonthlyAverages(self):
+        """Display monthly average water levels as a bar chart."""
+        try:
+            display_monthly_averages(self.site_name)
+            logger.info("Monthly average data displayed successfully")
+        except Exception as e:
+            logger.error(f"Error occurred while displaying monthly averages: {str(e)}")
+            QMessageBox.warning(self, "Error", f"Failed to display monthly averages: {str(e)}")
 
     def exportData(self):
         """Export downloaded data to CSV."""
