@@ -71,6 +71,18 @@ class MyApp(QWidget):
         self.combo_sample.currentTextChanged.connect(self.updateSampleInterval)
         left_layout.addWidget(self.combo_sample)
 
+        # Download Mode label
+        self.download_mode_label = QLabel('Download Mode', self)
+        left_layout.addWidget(self.download_mode_label)
+
+        # Add download mode dropdown, set width to 250
+        self.combo_download_mode = QComboBox(self)
+        self.combo_download_mode.addItems(['Single Block', 'Multiple Blocks'])
+        self.combo_download_mode.setCurrentText('Multiple Blocks')
+        self.combo_download_mode.setFixedWidth(250)  # Set width to 250 units
+        self.combo_download_mode.currentTextChanged.connect(self.updateDownloadMode)
+        left_layout.addWidget(self.combo_download_mode)
+
         # Number of Weeks label
         self.days_label = QLabel('Number of Weeks', self)
         left_layout.addWidget(self.days_label)
@@ -182,6 +194,10 @@ class MyApp(QWidget):
         """Update the sampling interval based on dropdown selection."""
         self.sample_interval = int(text.split()[0])
 
+    def updateDownloadMode(self, text):
+        """Update the download mode based on dropdown selection."""
+        self.download_mode = text
+
     def downloadData(self):
         """Download and validate river data."""
         if not self.site_id:
@@ -190,8 +206,10 @@ class MyApp(QWidget):
         try:
             self.status_label.setText("Downloading...")
             QApplication.processEvents()  # Force UI to update immediately
-            download_data_multiple_blocks(self.site_id, self.time_period, parent=self)  # download station data for selected number of weeks
-            # download_data_single_block(self.site_id, self.time_period)  # download station data for selected number of weeks
+            if hasattr(self, 'download_mode') and self.download_mode == 'Single Block':
+                download_data_single_block(self.site_id, self.time_period)
+            else:
+                download_data_multiple_blocks(self.site_id, self.time_period, parent=self)
             data_is_valid = validate_API_data()  # validate the data downloaded from the USGS API
             if data_is_valid:
                 self.status_label.setText("Download Finished")
@@ -211,7 +229,7 @@ class MyApp(QWidget):
             self.export_button.setEnabled(False)
             self.generate_stats_button.setEnabled(False)
             logger.error(f"Error occurred while downloading data: {str(e)}")
-
+            
     def displayData(self):
         """Display the downloaded river data."""
         try:
