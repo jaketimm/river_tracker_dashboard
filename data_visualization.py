@@ -90,8 +90,13 @@ def display_data(sample_interval, site_name):
         logger.error(f"Error processing data: {str(e)}")
         raise RuntimeError(f"Error processing data: {str(e)}")
 
-
-def display_monthly_averages(site_name):
+'''
+Function: display_monthly_statistics_barchart
+Inputs: river station ID
+Outputs: None
+Description: Loads the river data and displays a bar chart of the monthly water level min, max, and mean.
+'''
+def display_monthly_statistics_barchart(site_name):
     try:
         # Read the RDB file into a DataFrame
         df = pd.read_csv('river_level_data.rdb', delimiter='\t', comment='#')
@@ -106,29 +111,42 @@ def display_monthly_averages(site_name):
         # Extract month from datetime and create a new column
         df['month'] = df['datetime'].dt.month
         
-        # Group by month and calculate average level
-        monthly_avg = df.groupby('month')['level'].mean().reset_index()
+        # Group by month and calculate mean, min, and max levels
+        monthly_stats = df.groupby('month')['level'].agg(['mean', 'min', 'max']).reset_index()
         
         # Create month names for x-axis labels
         month_names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
                        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         
-        # Create the bar chart
-        plt.figure(figsize=(10, 6))
-        bars = plt.bar(monthly_avg['month'], monthly_avg['level'], color='skyblue')
+        # Create the bar chart with grouped bars
+        plt.figure(figsize=(12, 6))
+        bar_width = 0.25
+        x = np.arange(len(monthly_stats['month']))
+        
+        # Plot bars for mean, min, and max
+        plt.bar(x - bar_width, monthly_stats['mean'], bar_width, label='Mean', color='skyblue')
+        plt.bar(x, monthly_stats['min'], bar_width, label='Min', color='lightcoral')
+        plt.bar(x + bar_width, monthly_stats['max'], bar_width, label='Max', color='lightgreen')
         
         # Add data labels on top of each bar
-        for bar in bars:
-            height = bar.get_height()
-            plt.text(bar.get_x() + bar.get_width()/2., height + 0.05,
-                    f'{height:.2f}', ha='center', va='bottom')
+        for i in range(len(monthly_stats)):
+            # Mean
+            plt.text(x[i] - bar_width, monthly_stats['mean'][i] + 0.05, 
+                     f'{monthly_stats["mean"][i]:.2f}', ha='center', va='bottom')
+            # Min
+            plt.text(x[i], monthly_stats['min'][i] + 0.05, 
+                     f'{monthly_stats["min"][i]:.2f}', ha='center', va='bottom')
+            # Max
+            plt.text(x[i] + bar_width, monthly_stats['max'][i] + 0.05, 
+                     f'{monthly_stats["max"][i]:.2f}', ha='center', va='bottom')
         
         # Set x-axis ticks and labels
-        plt.xticks(monthly_avg['month'], [month_names[i-1] for i in monthly_avg['month']])
+        plt.xticks(x, [month_names[i-1] for i in monthly_stats['month']])
         
         plt.xlabel('Month')
-        plt.ylabel('Average Water Level (feet)')
-        plt.title(site_name + ': Monthly Average Water Levels')
+        plt.ylabel('Water Level (feet)')
+        plt.title(site_name + ': Monthly Water Level Statistics')
+        plt.legend()
         plt.grid(axis='y', linestyle='--', alpha=0.7)
         plt.tight_layout()
         plt.show()

@@ -213,3 +213,47 @@
 2025-05-12 10:21:18,266 - data_processing - INFO - Data sorting by date complete
 2025-05-12 10:21:18,272 - data_processing - ERROR - Required columns missing from data file
 2025-05-12 10:21:18,273 - __main__ - ERROR - Downloaded data is not valid
+2025-05-12 13:02:22,625 - __main__ - INFO - Selected station ID: 04031000
+2025-05-12 13:02:35,878 - data_processing - ERROR - HTTP error occurred for time range 2025-03-03 13:02:27.164713 to 2025-03-10 13:02:27.164713: 503 Server Error:  for url: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-03-03T13:02:27.000-04:00&endDT=2025-03-10T13:02:27.000-04:00&format=rdb
+2025-05-12 13:02:40,844 - data_processing - INFO - Data download complete
+2025-05-12 13:02:40,989 - data_processing - INFO - Data sorting by date complete
+2025-05-12 13:02:41,014 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 13:02:49,748 - __main__ - INFO - Data displayed successfully
+2025-05-12 13:02:53,173 - __main__ - INFO - Monthly statistics bar chart displayed successfully
+2025-05-12 13:03:36,044 - data_processing - INFO - Summary statistics generated successfully
+2025-05-12 13:03:36,045 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-12 13:03:37,269 - __main__ - INFO - Monthly statistics bar chart displayed successfully
+2025-05-12 13:06:53,995 - __main__ - INFO - Selected station ID: 04032150
+2025-05-12 13:06:54,968 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04032150&agencyCd=USGS&parameterCd=00065&startDT=2025-05-05T13%3A06%3A54.701-04%3A00&endDT=2025-05-12T13%3A06%3A54.701-04%3A00&format=rdb
+2025-05-12 13:06:54,984 - data_processing - INFO - Data sorting by date complete
+2025-05-12 13:06:54,991 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 13:06:57,370 - __main__ - INFO - Selected station ID: 04037400
+2025-05-12 13:07:06,129 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04037400&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T13%3A07%3A05.805-04%3A00&endDT=2025-05-12T13%3A07%3A05.805-04%3A00&format=rdb
+2025-05-12 13:07:06,206 - data_processing - INFO - Data sorting by date complete
+2025-05-12 13:07:06,218 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 13:07:09,358 - __main__ - INFO - Selected station ID: 442400084472801
+2025-05-12 13:07:10,959 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=442400084472801&agencyCd=USGS&parameterCd=00065&startDT=2025-03-31T13%3A07%3A10.817-04%3A00&endDT=2025-05-12T13%3A07%3A10.817-04%3A00&format=rdb
+2025-05-12 13:07:10,965 - data_processing - INFO - Data sorting by date complete
+2025-05-12 13:07:10,972 - data_processing - ERROR - Loaded data is empty
+2025-05-12 13:07:10,974 - __main__ - ERROR - Downloaded data is not valid
+2025-05-12 13:07:17,442 - __main__ - INFO - Selected station ID: 04031000
+2025-05-12 13:07:25,972 - data_processing - INFO - Data download complete
+2025-05-12 13:07:26,055 - data_processing - INFO - Data sorting by date complete
+2025-05-12 13:07:26,066 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 13:07:28,071 - __main__ - INFO - Monthly statistics bar chart displayed successfully
+2025-05-12 13:07:58,780 - __main__ - INFO - Selected station ID: 04036000
+2025-05-12 13:47:35,380 - __main__ - INFO - Selected station ID: 04119070
+2025-05-12 13:47:36,810 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-17T13%3A47%3A36.351-04%3A00&endDT=2025-05-12T13%3A47%3A36.351-04%3A00&format=rdb
+2025-05-12 13:47:36,900 - data_processing - INFO - Data sorting by date complete
+2025-05-12 13:47:36,914 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 13:47:39,057 - __main__ - INFO - Monthly statistics bar chart displayed successfully
+2025-05-12 13:48:01,898 - __main__ - INFO - Data displayed successfully
+2025-05-12 13:48:15,185 - data_processing - INFO - Summary statistics generated successfully
+2025-05-12 13:48:15,188 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-12 13:48:25,166 - data_processing - INFO - Data download complete
+2025-05-12 13:48:25,296 - data_processing - INFO - Data sorting by date complete
+2025-05-12 13:48:25,312 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 13:48:27,779 - __main__ - INFO - Data displayed successfully
+2025-05-12 13:48:32,577 - data_processing - INFO - Summary statistics generated successfully
+2025-05-12 13:48:32,577 - __main__ - INFO - Summary statistics displayed successfully
+2025-05-12 13:48:33,703 - __main__ - INFO - Monthly statistics bar chart displayed successfully
