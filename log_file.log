@@ -188,3 +188,28 @@
 2025-05-12 09:44:28,050 - __main__ - INFO - Data downloaded and validated successfully
 2025-05-12 09:44:29,670 - data_visualization - ERROR - Error processing data: Unknown datetime string format, unable to parse: 20d, at position 0
 2025-05-12 09:44:29,671 - __main__ - ERROR - Error occurred while displaying monthly averages: Error processing data: Unknown datetime string format, unable to parse: 20d, at position 0
+2025-05-12 10:06:30,076 - __main__ - INFO - Selected station ID: 04031000
+2025-05-12 10:06:32,845 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-05-05T10%3A06%3A32.554-04%3A00&endDT=2025-05-12T10%3A06%3A32.554-04%3A00&format=rdb
+2025-05-12 10:06:32,867 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 10:07:30,174 - __main__ - INFO - Selected station ID: 04031000
+2025-05-12 10:07:32,791 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-05-05T10%3A07%3A32.603-04%3A00&endDT=2025-05-12T10%3A07%3A32.603-04%3A00&format=rdb
+2025-05-12 10:07:32,802 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 10:07:34,845 - __main__ - INFO - Monthly average data displayed successfully
+2025-05-12 10:11:05,426 - __main__ - INFO - Selected station ID: 04033000
+2025-05-12 10:11:09,350 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04033000&agencyCd=USGS&parameterCd=00065&startDT=2025-05-05T10%3A11%3A08.484-04%3A00&endDT=2025-05-12T10%3A11%3A08.484-04%3A00&format=rdb
+2025-05-12 10:11:09,362 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 10:11:10,896 - __main__ - INFO - Monthly average data displayed successfully
+2025-05-12 10:16:14,059 - __main__ - INFO - Selected station ID: 04031000
+2025-05-12 10:16:16,917 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-05-05T10%3A16%3A16.643-04%3A00&endDT=2025-05-12T10%3A16%3A16.643-04%3A00&format=rdb
+2025-05-12 10:16:16,948 - data_processing - INFO - Data sorting by date complete
+2025-05-12 10:16:16,956 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 10:16:18,711 - __main__ - INFO - Monthly average data displayed successfully
+2025-05-12 10:20:02,803 - __main__ - INFO - Selected station ID: 04031000
+2025-05-12 10:20:05,703 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-05-05T10%3A20%3A05.466-04%3A00&endDT=2025-05-12T10%3A20%3A05.466-04%3A00&format=rdb
+2025-05-12 10:20:05,728 - data_processing - INFO - Data sorting by date complete
+2025-05-12 10:20:05,736 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 10:21:15,754 - __main__ - INFO - Selected station ID: 04032150
+2025-05-12 10:21:18,243 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04032150&agencyCd=USGS&parameterCd=00065&startDT=2025-05-05T10%3A21%3A18.052-04%3A00&endDT=2025-05-12T10%3A21%3A18.052-04%3A00&format=rdb
+2025-05-12 10:21:18,266 - data_processing - INFO - Data sorting by date complete
+2025-05-12 10:21:18,272 - data_processing - ERROR - Required columns missing from data file
+2025-05-12 10:21:18,273 - __main__ - ERROR - Downloaded data is not valid

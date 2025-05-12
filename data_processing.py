@@ -135,8 +135,7 @@ def download_data_single_block(station_id, num_weeks):
     timestamp = datetime.now()
 
     # Calculate date `num_days` ago
-    start_datetime = timestamp - timedelta(days=(num_weeks *7))
-
+    start_datetime = timestamp - timedelta(days=(num_weeks * 7))
     # Format dates as required by the USGS API
     start_dt = start_datetime.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + '-04:00'
     end_dt = timestamp.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + '-04:00'
@@ -158,19 +157,42 @@ def download_data_single_block(station_id, num_weeks):
     try:
         # Download the data
         response = requests.get(url)
+        response.raise_for_status()
 
-        # Check if the request was successful
-        if response.status_code == 200:
-            # Save the data to a file
-            with open('river_level_data.rdb', 'wb') as f:
-                f.write(response.content)
-            logger.info(f"Download succeeded - URL: {url}")
-        else:
-            raise Exception(f"HTTP Error {response.status_code}: {response.text}")
+        output_file = "river_level_data.rdb"
+        header_written = False
+        data_to_write = []
 
+        # Process the response text line by line
+        lines = response.text.split('\n')
+        for line in lines:
+            if not line.strip():
+                continue
+            if line.startswith('agency_cd') and not header_written:
+                data_to_write.append(line)
+                header_written = True
+            elif line.startswith('USGS'):
+                data_to_write.append(line)
+
+        # Write processed data to file
+        with open(output_file, 'w') as f:
+            f.write("# USGS River Level Data\n")
+            if data_to_write:
+                f.write('\n'.join(data_to_write) + '\n')
+
+        logger.info(f"Download succeeded - URL: {url}")
+        sort_data_by_date(output_file)
+        logger.info("Data sorting by date complete")
+
+    except requests.exceptions.HTTPError as http_err:
+        logger.error(f"HTTP error occurred: {http_err}")
+        raise Exception(f"HTTP Error: {http_err}")
+    except requests.exceptions.RequestException as req_err:
+        logger.error(f"Request error occurred: {req_err}")
+        raise Exception(f"Request Error: {req_err}")
     except Exception as e:
         logger.error(f"Download failed - URL: {url} - Error: {str(e)}")
-        raise  # Re-raise the exception to be handled by the caller
+        raise Exception(f"Download failed: {str(e)}")
 
 '''
 Function: validate_API_data
