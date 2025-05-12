@@ -170,3 +170,21 @@
 2025-05-09 14:17:33,702 - data_processing - INFO - Summary statistics generated successfully
 2025-05-09 14:17:33,702 - __main__ - INFO - Summary statistics displayed successfully
 2025-05-09 14:17:35,672 - __main__ - INFO - Monthly average data displayed successfully
+2025-05-09 14:24:33,741 - __main__ - INFO - Selected station ID: 04031000
+2025-05-09 14:24:36,337 - data_processing - INFO - Data download complete
+2025-05-09 14:24:36,357 - data_processing - INFO - Data sorting by date complete
+2025-05-09 14:24:36,365 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 14:24:38,957 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-05-02T14%3A24%3A38.546-04%3A00&endDT=2025-05-09T14%3A24%3A38.546-04%3A00&format=rdb
+2025-05-09 14:24:38,961 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-09 14:26:09,010 - __main__ - INFO - Selected station ID: 04032150
+2025-05-09 14:26:10,481 - data_processing - INFO - Data download complete
+2025-05-09 14:26:10,519 - data_processing - INFO - Data sorting by date complete
+2025-05-09 14:26:10,526 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 09:32:17,437 - __main__ - INFO - Selected station ID: 04033000
+2025-05-12 09:32:18,578 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04033000&agencyCd=USGS&parameterCd=00065&startDT=2025-05-05T09%3A32%3A18.260-04%3A00&endDT=2025-05-12T09%3A32%3A18.260-04%3A00&format=rdb
+2025-05-12 09:32:18,585 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 09:44:23,040 - __main__ - INFO - Selected station ID: 04031000
+2025-05-12 09:44:28,029 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-04-21T09%3A44%3A27.525-04%3A00&endDT=2025-05-12T09%3A44%3A27.525-04%3A00&format=rdb
+2025-05-12 09:44:28,050 - __main__ - INFO - Data downloaded and validated successfully
+2025-05-12 09:44:29,670 - data_visualization - ERROR - Error processing data: Unknown datetime string format, unable to parse: 20d, at position 0
+2025-05-12 09:44:29,671 - __main__ - ERROR - Error occurred while displaying monthly averages: Error processing data: Unknown datetime string format, unable to parse: 20d, at position 0
