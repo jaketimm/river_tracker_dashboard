@@ -328,3 +328,51 @@
 2025-05-13 11:14:03,142 - data_processing - INFO - Data sorting by date complete
 2025-05-13 11:14:03,147 - inland_lakes_rivers_widget - INFO - Data downloaded and validated successfully
 2025-05-13 11:14:04,289 - inland_lakes_rivers_widget - INFO - Data displayed successfully
+2025-05-13 11:46:30,743 - great_lakes_data_widget - ERROR - Error fetching data: 'GreatLakesDataWidget' object has no attribute 'data_url'
+2025-05-13 11:46:40,941 - great_lakes_data_widget - INFO - Fetched latest WTMP: MM °C
+2025-05-13 11:46:49,775 - great_lakes_data_widget - INFO - Fetched latest WTMP: MM °C
+2025-05-13 11:46:56,869 - inland_lakes_rivers_widget - INFO - Selected station ID: 04031000
+2025-05-13 11:48:28,301 - great_lakes_data_widget - INFO - Fetched latest WTMP: MM °C
+2025-05-13 11:48:34,201 - great_lakes_data_widget - INFO - Fetched latest WTMP: MM °C
+2025-05-13 11:49:41,066 - great_lakes_data_widget - INFO - Successfully loaded WTMP data
+2025-05-13 11:49:47,987 - great_lakes_data_widget - INFO - Successfully loaded WTMP data
+2025-05-13 11:49:54,447 - great_lakes_data_widget - INFO - Successfully loaded WTMP data
+2025-05-13 11:50:22,773 - great_lakes_data_widget - INFO - Successfully loaded WTMP data
+2025-05-13 11:52:23,631 - great_lakes_data_widget - INFO - Successfully loaded WTMP data
+2025-05-13 11:52:41,242 - great_lakes_data_widget - INFO - Successfully loaded WTMP data
+2025-05-13 11:55:51,535 - great_lakes_data_widget - ERROR - Error fetching data: 'GreatLakesDataWidget' object has no attribute 'data_url'
+2025-05-13 12:02:13,583 - great_lakes_data_widget - ERROR - Error fetching data: 'GreatLakesDataWidget' object has no attribute 'data_url'
+2025-05-13 12:03:55,969 - great_lakes_data_widget - ERROR - Error fetching data: 'GreatLakesDataWidget' object has no attribute 'data_url'
+2025-05-13 12:04:00,459 - great_lakes_data_widget - INFO - Fetched latest WTMP: MM °C
+2025-05-13 12:16:23,644 - great_lakes_data_widget - INFO - Fetched latest WTMP: 8.9 °C
+2025-05-13 12:16:28,009 - great_lakes_data_widget - INFO - Fetched latest WTMP: 8.9 °C
+2025-05-13 12:16:31,500 - great_lakes_data_widget - INFO - Fetched latest WTMP: 8.9 °C
+2025-05-13 12:16:32,521 - great_lakes_data_widget - INFO - Fetched latest WTMP: 8.9 °C
+2025-05-13 12:35:54,443 - great_lakes_data_widget - INFO - Fetched latest WTMP: 9.0 °C
+2025-05-13 12:36:06,286 - great_lakes_data_widget - INFO - Fetched latest WTMP: 9.0 °C
+2025-05-13 12:36:13,169 - inland_lakes_rivers_widget - INFO - Selected station ID: 04032150
+2025-05-13 12:36:14,997 - data_processing - INFO - Data download complete
+2025-05-13 12:36:15,024 - data_processing - INFO - Data sorting by date complete
+2025-05-13 12:36:15,029 - inland_lakes_rivers_widget - INFO - Data downloaded and validated successfully
+2025-05-13 12:36:18,372 - great_lakes_data_widget - INFO - Fetched latest WTMP: 9.0 °C
+2025-05-13 12:36:21,311 - inland_lakes_rivers_widget - INFO - Data displayed successfully
+2025-05-13 12:45:54,360 - great_lakes_data_widget - INFO - Fetched latest WTMP: 8.3 °C
+2025-05-13 12:45:59,850 - great_lakes_data_widget - INFO - Fetched latest WTMP: 8.3 °C
+2025-05-13 12:46:04,437 - great_lakes_data_widget - INFO - Fetched latest WTMP: 8.3 °C
+2025-05-13 12:46:16,327 - inland_lakes_rivers_widget - INFO - Selected station ID: 04119070
+2025-05-13 12:46:21,830 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-04-08T12%3A46%3A21.166-04%3A00&endDT=2025-05-13T12%3A46%3A21.166-04%3A00&format=rdb
+2025-05-13 12:46:21,885 - data_processing - INFO - Data sorting by date complete
+2025-05-13 12:46:21,894 - inland_lakes_rivers_widget - INFO - Data downloaded and validated successfully
+2025-05-13 12:46:23,202 - inland_lakes_rivers_widget - INFO - Data displayed successfully
+2025-05-13 12:46:31,983 - data_processing - INFO - Summary statistics generated successfully
+2025-05-13 12:46:31,984 - inland_lakes_rivers_widget - INFO - Summary statistics displayed successfully
+2025-05-13 12:46:33,131 - inland_lakes_rivers_widget - INFO - Monthly statistics bar chart displayed successfully
+2025-05-13 12:46:52,723 - data_processing - ERROR - HTTP error occurred for time range 2025-03-04 12:46:44.555367 to 2025-03-11 12:46:44.555367: 503 Server Error:  for url: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-04T12:46:44.000-04:00&endDT=2025-03-11T12:46:44.000-04:00&format=rdb
+2025-05-13 12:47:14,850 - data_processing - INFO - Data download complete
+2025-05-13 12:47:15,183 - data_processing - INFO - Data sorting by date complete
+2025-05-13 12:47:15,215 - inland_lakes_rivers_widget - INFO - Data downloaded and validated successfully
+2025-05-13 12:47:22,572 - inland_lakes_rivers_widget - INFO - Data displayed successfully
+2025-05-13 12:48:18,492 - inland_lakes_rivers_widget - INFO - Monthly statistics bar chart displayed successfully
+2025-05-13 12:49:09,095 - data_processing - INFO - Summary statistics generated successfully
+2025-05-13 12:49:09,097 - inland_lakes_rivers_widget - INFO - Summary statistics displayed successfully
+2025-05-13 12:49:11,068 - great_lakes_data_widget - INFO - Fetched latest WTMP: 8.3 °C

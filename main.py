@@ -1,9 +1,9 @@
 # main.py
 import sys
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QTabWidget, QWidget, QHBoxLayout, QLabel)
-from PyQt5.QtCore import Qt
 import logging
 from inland_lakes_rivers_widget import InlandLakesRiversWidget
+from great_lakes_data_widget import GreatLakesDataWidget
 
 # Configure logging
 logging.basicConfig(
@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 class MainApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('Data Downloader Application')
+        self.setWindowTitle('Water Data Downloader Application')
         self.setGeometry(200, 200, 800, 600)
 
         # Create the main widget and layout
@@ -30,18 +30,14 @@ class MainApp(QMainWindow):
         # Create tab widget
         tabs = QTabWidget()
 
-        # Tab 1: Inland Lakes and Rivers (original MyApp widget)
+        # Tab 1: Inland Lakes and Rivers
         tab1 = InlandLakesRiversWidget()
         tabs.addTab(tab1, "Inland Lakes and Rivers")
+        tabs.addTab(tab1, "Inland Lakes and Rivers")
 
-        # Tab 2: Simple placeholder tab
-        tab2 = QWidget()
-        tab2_layout = QHBoxLayout()
-        tab2_label = QLabel("Tab 2")
-        tab2_label.setAlignment(Qt.AlignCenter)
-        tab2_layout.addWidget(tab2_label)
-        tab2.setLayout(tab2_layout)
-        tabs.addTab(tab2, "Tab 2")
+        # Tab 2: Great Lakes Data
+        tab2 = GreatLakesDataWidget()
+        tabs.addTab(tab2, "Great Lakes Data")
 
         # Add tabs to the main layout
         layout.addWidget(tabs)

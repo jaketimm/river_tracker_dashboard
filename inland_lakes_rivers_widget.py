@@ -15,18 +15,18 @@ class InlandLakesRiversWidget(QWidget):
     def __init__(self):
         super().__init__()
 
-        # Load station data from CSV
+        # Load station list from CSV
         self.stations_df = pd.read_csv('station_list_mi.csv', dtype={'id': str})
         self.stations = self.stations_df.to_dict('records')  # List of dicts with 'name' and 'id'
 
         self.initUI()
-        self.time_period = 1  # default value of 21 days
+        self.time_period = 1  # default value of 1 week
         self.site_id = ''  # will be set when user selects a station
         self.site_name = ''
-        self.sample_interval = 3  # default sampling interval
+        self.sample_interval = 3  # default sampling interval for plotting
 
     def initUI(self):
-        self.setGeometry(300, 300, 400, 550)  # Increased height for new button
+        self.setGeometry(300, 300, 400, 550)
         self.setWindowTitle('River & Lake Data Downloader')
 
         # Main layout
@@ -90,7 +90,7 @@ class InlandLakesRiversWidget(QWidget):
         self.slider.valueChanged.connect(self.updateTimePeriod)
         left_layout.addWidget(self.slider)
 
-        # Add label to display selected days
+        # Add label to display selected number of weeks
         self.time_label = QLabel('1 week', self)
         left_layout.addWidget(self.time_label)
 
@@ -102,34 +102,34 @@ class InlandLakesRiversWidget(QWidget):
 
         # Download button, set width to 250
         self.download_button = QPushButton('Download Data', self)
-        self.download_button.setFixedWidth(250)  # Set width to 250 units
+        self.download_button.setFixedWidth(250)
         self.download_button.clicked.connect(self.downloadData)
         right_layout.addWidget(self.download_button)
 
         # Display button, set width to 250
         self.display_button = QPushButton('Display Data', self)
-        self.display_button.setFixedWidth(250)  # Set width to 250 units
+        self.display_button.setFixedWidth(250)
         self.display_button.clicked.connect(self.displayData)
         self.display_button.setEnabled(False)  # Initially disabled
         right_layout.addWidget(self.display_button)
 
         # Export button, set width to 250
         self.export_button = QPushButton('Export to CSV', self)
-        self.export_button.setFixedWidth(250)  # Set width to 250 units
+        self.export_button.setFixedWidth(250)
         self.export_button.clicked.connect(self.exportData)
         self.export_button.setEnabled(False)  # Initially disabled
         right_layout.addWidget(self.export_button)
 
         # Summary Statistics button, set width to 250
         self.generate_stats_button = QPushButton('Summary Statistics', self)
-        self.generate_stats_button.setFixedWidth(250)  # Set width to 250 units
+        self.generate_stats_button.setFixedWidth(250)
         self.generate_stats_button.clicked.connect(self.generateStatistics)
         self.generate_stats_button.setEnabled(False)  # Initially disabled
         right_layout.addWidget(self.generate_stats_button)
 
         # Monthly statistics button, set width to 250
         self.monthly_barchart_button = QPushButton('Monthly Statistics Bar Chart', self)
-        self.monthly_barchart_button.setFixedWidth(250)  # Set width to 250 units
+        self.monthly_barchart_button.setFixedWidth(250)
         self.monthly_barchart_button.clicked.connect(self.displayMonthlyStatsChart)
         self.monthly_barchart_button.setEnabled(False)  # Initially disabled
         right_layout.addWidget(self.monthly_barchart_button)
@@ -182,11 +182,11 @@ class InlandLakesRiversWidget(QWidget):
     def updateTimePeriod(self, value):
         self.time_period = value
         self.time_label.setText(f'{value} week(s)')
-        # Reset data availability when changing time period
+        # Reset data availability when changing time period (disable buttons)
         self.display_button.setEnabled(False)
         self.export_button.setEnabled(False)
         self.generate_stats_button.setEnabled(False)
-        self.monthly_barchart_button.setEnabled(False)  # Disable monthly barchart button
+        self.monthly_barchart_button.setEnabled(False)
 
     def updateSampleInterval(self, text):
         """Update the sampling interval based on dropdown selection."""
@@ -211,24 +211,24 @@ class InlandLakesRiversWidget(QWidget):
             data_is_valid = validate_API_data()  # validate the data downloaded from the USGS API
             if data_is_valid:
                 self.status_label.setText("Download Finished")
-                self.display_button.setEnabled(True)
+                self.display_button.setEnabled(True)  # Enable buttons
                 self.export_button.setEnabled(True)
                 self.generate_stats_button.setEnabled(True)
-                self.monthly_barchart_button.setEnabled(True)  # Enable monthly barchart button
+                self.monthly_barchart_button.setEnabled(True)
                 logger.info("Data downloaded and validated successfully")
             else:
                 self.status_label.setText("Download failed")
-                self.display_button.setEnabled(False)
+                self.display_button.setEnabled(False)  # Disable buttons
                 self.export_button.setEnabled(False)
                 self.generate_stats_button.setEnabled(False)
-                self.monthly_barchart_button.setEnabled(False)  # Disable monthly barchart button
+                self.monthly_barchart_button.setEnabled(False)
                 logger.error("Downloaded data is not valid")
         except Exception as e:
             self.status_label.setText("Download failed")
-            self.display_button.setEnabled(False)
+            self.display_button.setEnabled(False)  # Disable buttons
             self.export_button.setEnabled(False)
             self.generate_stats_button.setEnabled(False)
-            self.monthly_barchart_button.setEnabled(False)  # Disable monthly barchart button
+            self.monthly_barchart_button.setEnabled(False)
             logger.error(f"Error occurred while downloading data: {str(e)}")
 
     def displayData(self):
