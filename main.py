@@ -33,7 +33,6 @@ class MainApp(QMainWindow):
         # Tab 1: Inland Lakes and Rivers
         tab1 = InlandLakesRiversWidget()
         tabs.addTab(tab1, "Inland Lakes and Rivers")
-        tabs.addTab(tab1, "Inland Lakes and Rivers")
 
         # Tab 2: Great Lakes Data
         tab2 = GreatLakesDataWidget()

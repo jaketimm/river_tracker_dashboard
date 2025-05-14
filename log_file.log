@@ -397,3 +397,18 @@
 2025-05-14 11:55:09,330 - data_processing - INFO - Summary statistics generated successfully
 2025-05-14 11:55:09,332 - inland_lakes_rivers_widget - INFO - Summary statistics displayed successfully
 2025-05-14 11:55:10,347 - inland_lakes_rivers_widget - INFO - Monthly statistics bar chart displayed successfully
+2025-05-14 12:07:48,646 - data_processing - INFO - Fetching buoy data from https://www.ndbc.noaa.gov/data/realtime2/45029.txt
+2025-05-14 12:07:49,115 - data_processing - INFO - Fetched latest WTMP: 8.8 °C
+2025-05-14 12:08:29,909 - inland_lakes_rivers_widget - INFO - Selected station ID: 04031000
+2025-05-14 12:08:39,032 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04031000&agencyCd=USGS&parameterCd=00065&startDT=2025-05-07T12%3A08%3A38.557-04%3A00&endDT=2025-05-14T12%3A08%3A38.557-04%3A00&format=rdb
+2025-05-14 12:08:39,058 - data_processing - INFO - Data sorting by date complete
+2025-05-14 12:08:39,065 - inland_lakes_rivers_widget - INFO - Data downloaded and validated successfully
+2025-05-14 12:08:41,821 - inland_lakes_rivers_widget - INFO - Data displayed successfully
+2025-05-14 12:08:53,093 - inland_lakes_rivers_widget - INFO - Selected station ID: 04122500
+2025-05-14 12:08:58,226 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04122500&agencyCd=USGS&parameterCd=00065&startDT=2025-03-19T12%3A08%3A57.491-04%3A00&endDT=2025-05-14T12%3A08%3A57.491-04%3A00&format=rdb
+2025-05-14 12:08:58,328 - data_processing - INFO - Data sorting by date complete
+2025-05-14 12:08:58,348 - inland_lakes_rivers_widget - INFO - Data downloaded and validated successfully
+2025-05-14 12:09:00,507 - inland_lakes_rivers_widget - INFO - Data displayed successfully
+2025-05-14 12:09:12,009 - inland_lakes_rivers_widget - INFO - Monthly statistics bar chart displayed successfully
+2025-05-14 12:09:17,932 - data_processing - INFO - Summary statistics generated successfully
+2025-05-14 12:09:17,934 - inland_lakes_rivers_widget - INFO - Summary statistics displayed successfully
