@@ -1,13 +1,17 @@
-# River Level Tracking System
+# Water Level & Temperature Tracking System
 
 ## Overview
-A Python-based system for tracking and visualizing river level data from USGS stations. The system provides a GUI interface for selecting river locations and viewing historical river level data with customizable time ranges.
+A Python-based system for tracking and visualizing data from USGS and NOAA stations. 
+The system provides a GUI interface with two tabs. The first tab contains an interface for 
+downloading, visualizing, and performing statistical calculations on data from USGS river and lake 
+stations. The second tab contains an interface for downloading and visualizing data from NOAA 
+buoy and lake stations.
 
 ## Features
-- Interactive GUI for station selection and data visualization
+- Interactive GUI for data downloading, statistics, and data visualization
 - Modular architecture with separate components for data processing and visualization
 - Comprehensive logging system for debugging and monitoring
-- Flexible data sampling and display options (1-52 weeks)
+- Flexible data sampling and display options 
 - Persistent data storage using RDB format
 
 ## Prerequisites
@@ -18,34 +22,46 @@ A Python-based system for tracking and visualizing river level data from USGS st
   - `requests`: HTTP requests for data download
   - `pandas`: Data manipulation
   - `matplotlib`: Data visualization
-  - `logging`: Built-in logging functionality
+  - `numpy`: Data manipulation
 
 Install dependencies via pip:
 ```bash
-pip install PyQt5 requests pandas matplotlib
+pip install PyQt5 requests pandas matplotlib numpy
 ```
 
 ## Project Structure
 
 ```
 .
-├── main.py                   # Main application entry point
-├── data_processing.py        # Data processing and manipulation logic
-├── data_visualization.py     # Data visualization components
-├── river_level_data.rdb      # Persistent data storage
-├── station_processer.py      # Compile CSV station list
-├── station_list_mi.csv       # List of Michigan stations
-├── real_mi.txt               # Michigan station data
-├── log_file.log              # Application logs
-└── .venv/                    # Python virtual environment
+├── main.py                       # Main application entry point
+├── inland_lakes_rivers_widget.py # Inland Lake and River Tools GUI
+├── great_lakes_data_widget.py    # Great Lakes Tools GUI
+├── data_processing.py            # Data processing and manipulation logic
+├── data_visualization.py         # Data visualization components
+├── river_level_data.rdb          # Persistent data storage
+├── station_processer.py          # Compile USGS CSV station list
+├── station_list_mi.csv           # List of Michigan stations
+├── real_mi.txt                   # Michigan station data
+├── log_file.log                  # Application logs
+└── .venv/                        # Python virtual environment
 ```
 
 ## Components
 
 ### Main Application (`main.py`)
 - Handles GUI initialization and user interactions
-- Coordinates between data processing and visualization modules
 - Manages application logging
+
+
+### Inland Lakes & Rivers Widget (`inland_lakes_rivers_widget.py`)
+- Contains interface for USGS data download and visualization tools
+- Coordinates between data processing and visualization modules
+
+
+### Great Lakes Widget (`great_lakes_data_widget.py`)
+- Contains interface for NOAA data download and visualization tools
+- Coordinates between data processing and visualization modules
+
 
 ### Data Processing (`data_processing.py`)
 - Handles USGS data retrieval and processing
@@ -57,6 +73,7 @@ pip install PyQt5 requests pandas matplotlib
 - Creates and manages data plots
 - Handles graph customization and updates
 - Implements visualization utilities
+
 
 ### Station Processing (`station_processer.py`)
 - Processes and compiles station lists
