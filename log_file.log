@@ -382,3 +382,18 @@
 2025-05-14 10:59:45,294 - data_processing - INFO - Fetched latest WTMP: 8.8 °C
 2025-05-14 10:59:59,244 - data_processing - INFO - Fetching buoy data from https://www.ndbc.noaa.gov/data/realtime2/45029.txt
 2025-05-14 10:59:59,357 - data_processing - INFO - Fetched latest WTMP: 8.8 °C
+2025-05-14 11:52:11,589 - data_processing - INFO - Fetching buoy data from https://www.ndbc.noaa.gov/data/realtime2/45029.txt
+2025-05-14 11:52:11,969 - data_processing - INFO - Fetched latest WTMP: 8.8 °C
+2025-05-14 11:54:10,500 - data_processing - INFO - Fetching buoy data from https://www.ndbc.noaa.gov/data/realtime2/45029.txt
+2025-05-14 11:54:10,843 - data_processing - INFO - Fetched latest WTMP: 8.8 °C
+2025-05-14 11:54:24,661 - data_processing - INFO - Fetching buoy data from https://www.ndbc.noaa.gov/data/realtime2/45029.txt
+2025-05-14 11:54:24,791 - data_processing - INFO - Fetched latest WTMP: 8.8 °C
+2025-05-14 11:54:48,289 - inland_lakes_rivers_widget - INFO - Selected station ID: 04031000
+2025-05-14 11:54:52,656 - inland_lakes_rivers_widget - INFO - Selected station ID: 04119070
+2025-05-14 11:54:57,238 - data_processing - INFO - Download succeeded - URL: https://waterservices.usgs.gov/nwis/iv/?sites=04119070&agencyCd=USGS&parameterCd=00065&startDT=2025-03-19T11%3A54%3A56.737-04%3A00&endDT=2025-05-14T11%3A54%3A56.737-04%3A00&format=rdb
+2025-05-14 11:54:57,327 - data_processing - INFO - Data sorting by date complete
+2025-05-14 11:54:57,343 - inland_lakes_rivers_widget - INFO - Data downloaded and validated successfully
+2025-05-14 11:54:58,773 - inland_lakes_rivers_widget - INFO - Data displayed successfully
+2025-05-14 11:55:09,330 - data_processing - INFO - Summary statistics generated successfully
+2025-05-14 11:55:09,332 - inland_lakes_rivers_widget - INFO - Summary statistics displayed successfully
+2025-05-14 11:55:10,347 - inland_lakes_rivers_widget - INFO - Monthly statistics bar chart displayed successfully

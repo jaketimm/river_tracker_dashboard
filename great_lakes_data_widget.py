@@ -44,7 +44,9 @@ class GreatLakesDataWidget(QWidget):
             self.latest_wtmp = download_buoy_current_temp(self.data_url)
             
             if self.latest_wtmp is not None:
-                self.wtmp_label.setText(f"Latest Holland Water Temperature: {self.latest_wtmp} °C")
+                # Convert Celsius to Fahrenheit
+                fahrenheit = (self.latest_wtmp * 9/5) + 32
+                self.wtmp_label.setText(f"Latest Holland Water Temperature: {fahrenheit:.1f} °F")
             else:
                 self.wtmp_label.setText("Latest Holland Water Temperature: N/A")
                 logger.error("Failed to retrieve water temperature data")
