@@ -6,6 +6,7 @@ import requests
 import logging
 import os
 import time
+import io
 from PyQt5.QtWidgets import QMessageBox, QFileDialog
 
 logger = logging.getLogger(__name__)
@@ -277,6 +278,49 @@ def export_data(site_id, parent=None):
                             f"Failed to export data")
         raise Exception(f"Failed to export data: {str(e)}")
     
+'''
+Function: download_buoy_current_temp
+Inputs: buoy_url - URL for the buoy data
+Outputs: latest_wtmp - the current water temperature value as a float, or None if error
+Description: Downloads current temperature data from a NOAA buoy.
+'''
+def download_buoy_current_temp(buoy_url):
+    """Fetch data from the URL and return the most recent WTMP value."""
+    try:
+        # Download the data from the URL
+        logger.info(f"Fetching buoy data from {buoy_url}")
+        response = requests.get(buoy_url)
+        response.raise_for_status()  # Raise an exception for bad status codes
+
+        # Read the data into a pandas DataFrame
+        # The data has a header row starting with '#', and actual data follows
+        lines = response.text.splitlines()
+        # Skip the first two lines (header and units)
+        data_lines = lines[2:]
+        data_text = "\n".join(data_lines)
+
+        # Parse the data into a DataFrame (space-separated)
+        df = pd.read_csv(io.StringIO(data_text), sep=r'\s+', header=None)
+
+        # According to the header, WTMP is the 15th column (index 14)
+        if len(df.columns) > 14:  # Ensure WTMP column exists (index 14)
+            latest_wtmp = df.iloc[0, 14]  # Most recent value (first row)
+            logger.info(f"Fetched latest WTMP: {latest_wtmp} °C")
+            return latest_wtmp
+        else:
+            logger.error("Data format error: WTMP column not found")
+            return None
+
+    except Exception as e:
+        logger.error(f"Error fetching buoy data: {str(e)}")
+        return None
+
+'''
+Function: generate_summary_statistics
+Inputs: parent widget for dialogs
+Outputs: None
+Description: Generates summary statistics for the downloaded data.
+'''
 def generate_summary_statistics(parent=None):
     """Generate summary statistics for the downloaded data."""
     try:

@@ -376,3 +376,9 @@
 2025-05-13 12:49:09,095 - data_processing - INFO - Summary statistics generated successfully
 2025-05-13 12:49:09,097 - inland_lakes_rivers_widget - INFO - Summary statistics displayed successfully
 2025-05-13 12:49:11,068 - great_lakes_data_widget - INFO - Fetched latest WTMP: 8.3 °C
+2025-05-14 10:59:35,215 - data_processing - INFO - Fetching buoy data from https://www.ndbc.noaa.gov/data/realtime2/45029.txt
+2025-05-14 10:59:35,571 - data_processing - INFO - Fetched latest WTMP: 8.8 °C
+2025-05-14 10:59:45,179 - data_processing - INFO - Fetching buoy data from https://www.ndbc.noaa.gov/data/realtime2/45029.txt
+2025-05-14 10:59:45,294 - data_processing - INFO - Fetched latest WTMP: 8.8 °C
+2025-05-14 10:59:59,244 - data_processing - INFO - Fetching buoy data from https://www.ndbc.noaa.gov/data/realtime2/45029.txt
+2025-05-14 10:59:59,357 - data_processing - INFO - Fetched latest WTMP: 8.8 °C
